@@ -1,0 +1,169 @@
+{% extends "site_base.html" %}
+
+{% load boxes_tags %}
+{% load i18n %}
+{% load sponsorship_tags %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% load biblion_tags %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+{% block site_brand %}<a class="navbar-brand" href="{% url 'home' %}">
+          <img width="180" height="" class="img-responsive" src="{% static 'images/logo.png' %}"></a>
+{% endblock site_brand %}
+{% block wrapper_class %}{% endblock wrapper_class %}
+{% block body_outer %}
+
+<!-- headline -->
+      <div class="main-header" style="margin-top:70px;">
+        <div class="col-md-7 col-md-offset-5 header-message">
+        <h1 class="padded-multi-line">We're back in Portland!<br>
+        Aug. 30 - Sept. 6, 2014</h1>
+        </div>
+        </div>
+<!-- /headline -->
+
+<!-- call to action -->
+      <div class="row cta-section">
+      <div class="container">
+
+        <div class="col-xs-12 col-sm-4 col-md-4 cta">
+        <a href="{% url 'cms_page' 'call_for_proposals/' %}">
+          <svg width="100" height="100">
+                <image xlink:href="{% static "images/proposal-icon.svg" %}" src="{% static "images/proposal-icon.png" %}" width="100" height="100"/>
+              </svg>
+            <div class="cta-content">
+            Call for Proposals
+            </div>
+            </a>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-4 col-md-4 cta">
+        <a href="{% url 'sponsor_apply' %}">
+          <svg width="100" height="100">
+                <image xlink:href="{% static "images/sponsor-icon.svg" %}" src="{% static "images/sponsor-icon.png" %}" width="100" height="100"/>
+              </svg>
+            <div class="cta-content">
+            Become a Sponsor
+            </div>
+            </a>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-4 col-md-4 cta">
+        <a href="{% url 'cms_page' 'registration_info/' %}">
+          <svg width="100" height="100">
+                <image xlink:href="{% static "images/register-icon.svg" %}" src="{% static "images/register-icon.png" %}" width="100" height="100"/>
+              </svg>
+            <div class="cta-content">
+            Registration Info
+            </div>
+        </div>
+        </a>
+      </div>
+      </div>
+<!-- /call to action -->
+
+<!-- news -->
+    <div class="row news-section">
+    <div class="container">
+        <div class=" news col-md-12 col-centered">
+          <h1>LATEST NEWS</h1>
+          <ul>
+          {% latest_blog_posts as posts %}
+          {% for post in posts|slice:"3" %}
+	          <div class="col-md-4 col-sm-12">
+              <li>
+  	            <a href="{{ post.get_absolute_url }}"><h2>{{ post.title }}</h2>
+  	            {{ post.teaser_html|safe }}
+  	            </a>
+	            </li>
+            </div>
+
+          {% empty %}
+            <div class="col-md-4 col-md-offset-4 col-sm-12">
+              <li>
+                <p>No announcements have been published.</p>
+              </li>
+            </div>
+          {% endfor %}
+
+          </ul>
+      </div>
+    </div>
+    </div>
+<!-- /news -->
+
+<!-- sponsors -->
+<div class="row sponsors-section">
+
+  <div class="container">
+    <h1>OUR SPONSORS</h1>
+  </div>
+
+        <!-- Carousel
+================================================== -->
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Carousel items -->
+  	<div class="carousel-inner">
+
+              {% sponsors as all_sponsors %}
+                {# sponsors with levels, 6 per slide #}
+                {% for sponsor in all_sponsors %}
+                  {% if forloop.first or forloop.counter0|divisibleby:"6" %}
+                    <div class="container item {% if forloop.first %}active{% endif %}" style="margin: auto;">
+                  {% endif %}
+
+             <div class="col-md-2 col-sm-2 col-xs-6">
+		          <div class="sponsor-logo">
+
+			          {% if sponsor.external_url %}
+			            <a href="{{ sponsor.external_url }}">
+			          {% endif %}
+			            <img src="{% thumbnail sponsor.website_logo "132x80" %}"alt="{{ sponsor.name }}" />
+			          {% if sponsor.external_url %}</a>{% endif %}
+
+		            </div>
+		          <div class="level-label">{{ sponsor.level }}</div>
+		        </div>
+                    {% if forloop.counter|divisibleby:"6" or forloop.last %}</div>{% endif %}
+                {% endfor %}
+  	</div>
+  	<!-- /Carousel items -->
+
+    <!-- Indicators -->
+  	<ol class="carousel-indicators">
+    {% for sponsor in all_sponsors %}
+        {% if forloop.first or forloop.counter0|divisibleby:"6" %}
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        {% endif %}
+    {% endfor %}
+  	</ol>
+    <!-- /Indicators -->
+
+    <!-- Carousel nav -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    <!-- /Carousel nav -->
+
+  </div><!-- /.carousel -->
+
+</div>
+<!-- /sponsors -->
+
+<!-- Duckling Widget -->
+<div class="row duckling-widget-section">
+  <div class="container">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-centered">
+      <iframe src='//duckling.us/duckling-widget/djangocon2014/' height='247' width='310' frameborder='0' scrolling='no'></iframe>
+    </div>
+  </div>
+</div>
+<!-- /Duckling Widget -->
+
+{% endblock body_outer %}

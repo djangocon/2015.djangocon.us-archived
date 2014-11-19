@@ -1,0 +1,51 @@
+{% extends "site_base.html" %}
+
+{% load url from future %}
+
+
+{% load sponsorship_tags %}
+{% load thumbnail %}
+{% load i18n %}
+
+{% block page_title %}{% trans "About Our Sponsors" %}{% endblock page_title %}
+
+
+{% block body_class %}sponsorships{% endblock %}
+
+{% block body_outer %}
+    <div class="container no-padding page-content">
+
+        <div class="col-md-7 col-sm-9 col-xs-11 col-centered">
+
+        <div class="col-md-6 col-centered announcement-msg">
+            <a href="{% url 'cms_page' "sponsors/learn/" %}" class="btn btn-primary">Learn about Sponsorships</span></a>
+            <a href="{% url 'sponsor_apply' %}" class="btn btn-primary">Apply</span></a>
+        </div>
+
+            {% sponsor_levels as levels %}
+
+            {% for level in levels %}
+                {% if level.sponsors %}
+                <div class="col-md-12">
+                    <h2>{{ level.name }}</h2>
+                </div>
+                    {% for sponsor in level.sponsors %}
+                        {% if sponsor.website_logo %}
+                            <div class="row sponsor-detail">
+                                <div class="col-md-3 sponsor-logo-detail">
+                                    <img src="{% thumbnail sponsor.website_logo '132x80' %}" alt="{{ sponsor.name }}" />
+                                </div>
+                                <div class="col-md-9">
+                                    <h3><a href="{{ sponsor.external_url }}">{{ sponsor.name }}</a></h3>
+                                {% if sponsor.listing_text %}
+                                    <p>{{ sponsor.listing_text|urlize|linebreaks }}</p>
+                                {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

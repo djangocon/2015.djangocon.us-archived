@@ -1,0 +1,21 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load bootstrap_tags %}
+{% load boxes_tags %}
+{% load cache %}
+
+{% block head_title %}Contact Us{% endblock head_title %}
+{% block page_title %}Contact Us{% endblock page_title %}
+
+{% block body %}
+ <div class="container">
+    <div class="col-md-6 col-centered">
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form|as_bootstrap }}
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+    </div>
+</div>
+{% endblock body %}

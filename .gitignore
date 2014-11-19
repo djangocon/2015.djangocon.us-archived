@@ -1,0 +1,7 @@
+*.pyc
+*.swp
+_build
+dev.db
+site_media
+local.py
+.project
