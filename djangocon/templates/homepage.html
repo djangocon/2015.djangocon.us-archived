@@ -73,3 +73,25 @@
 
 
 {% endblock body_outer %}
+
+{% block footer_base %}
+
+    <div class="row" id="footer">
+      <div class="container">
+
+        <div class="col-md-6 col-centered">
+          <div class="contact-us">Questions? Comments?</div><a href="mailto:djangocon-organizers@googlegroups.com">Contact Us</a><br>
+          Design + Build by
+              <a href="http://www.caktusgroup.com">Caktus Consulting Group, LLC</a> using <a href="http://eldarion.com/symposion/" title="Symposion — An Open Platform for Conference Websites">Symposion</a><br />
+              Hosted on <a href="https://gondor.io">Gondor</a><br>
+              {% if request.user.is_anonymous %}
+              <a href="/account/login/">Admin login</a>
+              {% endif %}
+              {% if request.user.is_staff %}
+                        <a href="{% url THEME_ADMIN_URL|default:"admin:index" %}"> {% trans "Admin" %}</a></li>
+                    {% endif %}
+            <p>©{% now "Y" %} DjangoCon</p>
+          </div>
+       </div>
+    </div>
+    {% endblock footer_base %}
