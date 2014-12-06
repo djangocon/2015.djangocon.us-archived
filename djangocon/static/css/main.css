@@ -239,15 +239,9 @@ a:hover {
 }
 
 .small-header {
-	background-color: #82F2FF;
 	min-height: 130px;
 	margin-top: 70px;
 	padding-top: 20px;
-	color: #007481;
-	text-align: center;
-		background-image: url('../images/texture4.png'), url('../images/texture5.png');
-	background-repeat: no-repeat;
-	background-position: bottom right, top left;
 }
 
 .small-header h1 {
