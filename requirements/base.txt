@@ -5,12 +5,12 @@
 --extra-index-url=http://dist.pinaxproject.com/fresh-start/
 
 # Django packages
-Django==1.6.3
+Django==1.6.9
 django-mailer==0.2a1
 django-redis-cache==0.9.7
 metron==0.1 # 0.2.dev3
 pinax-utils==1.0b1.dev3
-South==0.8.4
+South==1.0.2
 # pin the version based on the version used for PyOhio 2014
 git+git://github.com/pyohio/symposion.git@2f6930ae11c6dcffd55d2e36c347fbcedd8552fa#egg=symposion
 biblion==2.2.3
@@ -21,7 +21,7 @@ django-contact-form==1.0
 gondor==1.2.5
 gunicorn==0.17.2
 hiredis==0.1.1
-Pillow==2.3.0
+Pillow==2.7.0
 psycopg2==2.4.6
 pytz==2012g
 redis==2.7.2
