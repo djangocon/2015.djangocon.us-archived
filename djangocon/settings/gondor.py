@@ -9,6 +9,7 @@ ALLOWED_HOSTS = [
     'tk551.gondor.co',
     'fi290.gondor.co',
     'cs998.gondor.co',
+    '2015.djangocon.us'
     'djangocon.us',
     'www.djangocon.us'
 ]
