@@ -47,6 +47,8 @@ if "GONDOR_REDIS_URL" in os.environ:
 if "GONDOR_HTTPS" in os.environ:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+
 SITE_ID = int(os.environ.get("SITE_ID", "1"))
 
 MEDIA_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "media")
