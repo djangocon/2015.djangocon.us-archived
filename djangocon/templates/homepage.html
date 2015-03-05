@@ -17,10 +17,9 @@
 {% block body_outer %}
 
 <!-- headline -->
-      <div class="main-header" style="margin-top:70px;">
+      <div class="main-header">
         <div class="col-md-7 col-md-offset-5 header-message">
-        <h1 class="padded-multi-line">We're back in Portland!<br>
-        Aug. 30 - Sept. 6, 2014</h1>
+
         </div>
         </div>
 <!-- /headline -->
@@ -30,40 +29,40 @@
       <div class="container">
 
         <div class="col-xs-12 col-sm-4 col-md-4 cta">
-        <a href="{% url 'cms_page' 'call_for_proposals/' %}">
-          <svg width="100" height="100">
-                <image xlink:href="{% static "images/proposal-icon.svg" %}" src="{% static "images/proposal-icon.png" %}" width="100" height="100"/>
-              </svg>
-            <div class="cta-content">
-            Call for Proposals
+          <div class="cta-paper">
+          <a href="{% url 'cms_page' 'call_for_proposals/' %}">
+            <div class="brdp-icon">a</div>
+            <div class="cta-content brdp">
+            Call<br> for Proposals
             </div>
-            </a>
+          </a>
+          </div>
         </div>
 
 
         <div class="col-xs-12 col-sm-4 col-md-4 cta">
-        <a href="{% url 'sponsor_apply' %}">
-          <svg width="100" height="100">
-                <image xlink:href="{% static "images/sponsor-icon.svg" %}" src="{% static "images/sponsor-icon.png" %}" width="100" height="100"/>
-              </svg>
-            <div class="cta-content">
-            Become a Sponsor
+          <div class="cta-paper">
+          <a href="{% url 'sponsor_apply' %}">
+            <div class="brdp-icon">C</div>
+            <div class="cta-content brdp">
+              Become<br> a Sponsor
             </div>
             </a>
+          </div>
         </div>
 
 
         <div class="col-xs-12 col-sm-4 col-md-4 cta">
-        <a href="{% url 'cms_page' 'registration_info/' %}">
-          <svg width="100" height="100">
-                <image xlink:href="{% static "images/register-icon.svg" %}" src="{% static "images/register-icon.png" %}" width="100" height="100"/>
-              </svg>
-            <div class="cta-content">
-            Registration Info
+          <div class="cta-paper">
+          <a href="{% url 'cms_page' 'registration_info/' %}">
+            <div class="brdp-icon">K</div>
+            <div class="cta-content brdp">
+              Registration<br> Info
             </div>
+            </div>
+          </a>
+          </div>
         </div>
-        </a>
-      </div>
       </div>
 <!-- /call to action -->
 
@@ -71,7 +70,7 @@
     <div class="row news-section">
     <div class="container">
         <div class=" news col-md-12 col-centered">
-          <h1>LATEST NEWS</h1>
+          <h1 class="brdp">LATEST NEWS</h1>
           <ul>
           {% latest_blog_posts as posts %}
           {% for post in posts|slice:"3" %}
@@ -101,7 +100,9 @@
 <div class="row sponsors-section">
 
   <div class="container">
-    <h1>OUR SPONSORS</h1>
+  <div class="col-md-12 col-centered">
+    <h1 class="brdp">OUR SPONSORS</h1>
+  </div>
   </div>
 
         <!-- Carousel
