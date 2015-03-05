@@ -494,8 +494,8 @@ a:hover {
     background-color: #009ee3;
     padding-top: 70px;
     padding-bottom: 210px;
-    /*background-image: url('../images/texture2.png');*/
-    background-position: bottom left;
+    background-image: url('../images/bend_right.png');
+    background-position: bottom right;
     background-repeat: no-repeat;
 }
 
