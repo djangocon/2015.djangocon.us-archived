@@ -92,7 +92,6 @@ h2 {
     margin:0;
     border-left: 26px solid #ebdfd7;
     border-right: 26px solid #ebdfd7;
-    border-bottom: 26px solid #ebdfd7;
 /*    border-image: url('../images/border.png') 30 repeat;
     -o-border-image: url('../images/border.png') 30 repeat;
     -moz-border-image: url('../images/border.png') 30 repeat;
@@ -979,7 +978,12 @@ textarea.markItUpEditor {
 
 
 
-
+ .divider-section {
+    background-image: url(../images/zigzack.png);
+    background-repeat: repeat-x;
+    height: 100px;
+    background-size: 200px 100px;
+ }
 
 
 
