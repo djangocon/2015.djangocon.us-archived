@@ -84,7 +84,9 @@ STATICFILES_DIRS = [
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "pipeline.finders.PipelineFinder",
 ]
+STATICFILES_STORAGE = 'djangocon.gzip_storage.GZIPPipelineStorage'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -158,6 +160,7 @@ INSTALLED_APPS = [
     "account",
     "model_utils",
     "biblion",
+    "pipeline",
 
     # symposion
     "symposion",
@@ -233,3 +236,6 @@ SOUTH_MIGRATION_MODULES = {
 }
 
 COMPS_DIR = os.path.join(PACKAGE_ROOT, "templates/comps")
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
+from .pipeline_settings import *

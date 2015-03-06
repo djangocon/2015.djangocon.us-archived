@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load pipeline %}
 {% load markitup_tags %}
 {% load sitetree %}
 <head>
@@ -11,12 +12,7 @@
   {% endblock viewport %}
 
   {% block style_base %}
-  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-  {% markitup_css %}
-  <link href="{% static 'fonts/brandonprinted/stylesheet.css' %}" rel="stylesheet">
-  <link href="{% static 'css/main.css' %}" rel="stylesheet">
-
-
+  {% stylesheet 'base' %}
   {% block extra_style %}{% endblock extra_style %}
   {% endblock style_base %}
 
@@ -127,8 +123,7 @@
 </div>
 </div>
   {% block script_base %}
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+  {% javascript 'base' %}
   {% block extra_script %}{% endblock extra_script %}
   {% endblock script_base %}
 

@@ -1,0 +1,24 @@
+PIPELINE_CSS = {
+    'base': {
+        'source_filenames': (
+          'css/bootstrap.min.css',
+          'fonts/brandonprinted/stylesheet.css',
+          'css/main.css'
+        ),
+        'output_filename': 'main.css',
+        'extra_context': {
+            'media': 'screen,projection',
+        },
+    },
+}
+
+PIPELINE_JS = {
+    'main': {
+        'source_filenames': (
+          'js/vendor/jquery-1.11.0.min.js',
+          'js/vendor/bootstrap.js',
+        ),
+        'output_filename': 'main.js',
+    }
+}
+
