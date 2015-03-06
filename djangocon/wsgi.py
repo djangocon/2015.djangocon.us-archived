@@ -11,7 +11,7 @@ password = os.environ.get('BARREL_PASS')
 
 application = get_wsgi_application()
 
-if username and password:
+if len(username) and len(password):
 
     auth_decorator = cooper.basicauth(
         users=[(username, password), ],
