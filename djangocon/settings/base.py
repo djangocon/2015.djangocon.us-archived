@@ -236,6 +236,6 @@ SOUTH_MIGRATION_MODULES = {
 }
 
 COMPS_DIR = os.path.join(PACKAGE_ROOT, "templates/comps")
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CSSMinCompressor'
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.NoopCompressor'
 PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.slimit.SlimItCompressor'
 from .pipeline_settings import *
