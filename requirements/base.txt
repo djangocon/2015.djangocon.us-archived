@@ -17,7 +17,8 @@ biblion==2.2.3
 django-comps==0.3.0
 django-contact-form==1.0
 django-pipeline==1.4.6
-yuicompressor==2.4.8
+slimit==0.8.1
+cssmin==0.2.0
 
 # Other Python packages
 barrel==0.1.3
