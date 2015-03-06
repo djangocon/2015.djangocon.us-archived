@@ -93,12 +93,6 @@ h2 {
     margin:0;
     border-left: 26px solid #ebdfd7;
     border-right: 26px solid #ebdfd7;
-/*    border-image: url('../images/border.png') 30 repeat;
-    -o-border-image: url('../images/border.png') 30 repeat;
-    -moz-border-image: url('../images/border.png') 30 repeat;
-    -webkit-border-image: url('../images/border.png') 30 repeat;
-
-    border-width: 30px;*/
 }
 
 
@@ -410,7 +404,6 @@ a:hover {
     padding-top: 20px;
     color: #007481;
     text-align: center;
-        background-image: url('../images/texture4.png'), url('../images/texture5.png');
     background-repeat: no-repeat;
     background-position: bottom right, top left;
 }
@@ -1073,17 +1066,11 @@ textarea.markItUpEditor {
 
 .moewe {
     height: 100%;
-  /*background-image: url(../img/moewe.gif); background-position:10% bottom; background-repeat: no-repeat;*/
 }
 
 .turm {
     height: 100%;
     background: url(../images/plants.png); background-position:30% bottom; background-repeat: no-repeat;
-}
-
-.ribbon {
-    height: 100%;
-    background: url(../images/nav_back.png) center 30% no-repeat;
 }
 
 .outer {
