@@ -86,7 +86,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     "pipeline.finders.PipelineFinder",
 ]
-STATICFILES_STORAGE = 'djangocon.gzip_storage.GZIPPipelineStorage'
+STATICFILES_STORAGE = 'djangocon.core.gzip_storage.GZIPPipelineStorage'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
