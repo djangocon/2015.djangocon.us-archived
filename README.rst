@@ -67,7 +67,7 @@ Change the permissions on the file::
 
 To deploy the develop branch to the staging instance::
 
-    gondor deploy dev develop
+    gondor deploy develop develop
 
 To deploy the master branch to the production instance::
 
