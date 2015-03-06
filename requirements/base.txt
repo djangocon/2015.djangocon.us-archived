@@ -22,6 +22,7 @@ yuicompressor==2.4.8
 # Other Python packages
 gondor==1.2.5
 gunicorn==0.17.2
+whitenoise==1.0.6
 hiredis==0.1.1
 Pillow==2.7.0
 psycopg2==2.4.6
