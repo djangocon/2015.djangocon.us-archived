@@ -16,10 +16,14 @@ git+git://github.com/pyohio/symposion.git@2f6930ae11c6dcffd55d2e36c347fbcedd8552
 biblion==2.2.3
 django-comps==0.3.0
 django-contact-form==1.0
+django-pipeline==1.4.6
+slimit==0.8.1
+cssmin==0.2.0
 
 # Other Python packages
 gondor==1.2.5
 gunicorn==0.17.2
+whitenoise==1.0.6
 hiredis==0.1.1
 Pillow==2.7.0
 psycopg2==2.4.6
