@@ -40,7 +40,8 @@
 </head>
 
 <body class="{% block body_class %}{% endblock body_class %}" id="{% block body_id %}{% endblock body_id %}">
-
+<div class="poster-bg">
+<div class="poster-shadow">
 
 
     {% block topbar_base %}
@@ -79,8 +80,6 @@
 </div>
 
 
-<div class="{% block wrapper_class %}wrapper topspace{% endblock wrapper_class %}">
-
     {% block body_base %}
 
 
@@ -95,7 +94,7 @@
       {% endblock body_outer %}
 
     {% endblock body_base %}
-</div><!--end of wrapper-->
+
 
     {% block footer_base %}
 
@@ -105,7 +104,8 @@
           <div class="outer">
             <div class="inner">
               <div class="container">
-
+              <div class="nail nail-bl"></div>
+              <div class="nail nail-br"></div>
                 <div class="col-md-6 col-centered footer-note">
                   <div class="contact-us">Questions? Comments?</div><a href="{% url 'contact_form' %}">Contact Us</a><br>
                   Design + Build by
@@ -124,8 +124,8 @@
 
     {% endblock footer_base %}
 
-
-
+</div>
+</div>
   {% block script_base %}
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
