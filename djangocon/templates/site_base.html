@@ -12,11 +12,10 @@
 
   {% block style_base %}
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,900' rel='stylesheet' type='text/css'>
   {% markitup_css %}
   <link href="{% static 'fonts/brandonprinted/stylesheet.css' %}" rel="stylesheet">
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
-  <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+
 
   {% block extra_style %}{% endblock extra_style %}
   {% endblock style_base %}
@@ -33,7 +32,7 @@
   {% block extra_head_base %}
     <script type="text/javascript" src="http://fast.fonts.net/jsapi/16d592c2-8b8a-4a2c-8fa6-4e0642508fe6.js"></script>
     <link href="{% static 'img/favicon.ico' %}" rel="shortcut icon" />
-    <script src="https://code.jquery.com/jquery-1.11.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     {% markitup_js "no-jquery" %}
     {% block extra_head %}{% endblock extra_head %}
   {% endblock extra_head_base %}
@@ -110,7 +109,7 @@
                 <div class="col-md-6 col-centered footer-note">
                   <div class="contact-us">Questions? Comments?</div><a href="{% url 'contact_form' %}">Contact Us</a><br>
                   Design + Build by
-                      <a href="http://www.caktusgroup.com">Caktus Consulting Group, LLC</a> using <a href="http://eldarion.com/symposion/" title="Symposion — An Open Platform for Conference Websites">Symposion</a><br />
+                      <a href="https://www.lincolnloop.com">Lincoln Loop</a> <br />
                       Hosted on <a href="https://gondor.io">Gondor</a>
                     <p>©{% now "Y" %} DjangoCon</p>
                   </div>
