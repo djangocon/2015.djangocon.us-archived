@@ -37,7 +37,8 @@ wsgi:
     gunicorn:
         # The worker class used to run gunicorn (possible values include:
         # sync, eventlet and gevent)
-        worker_class: sync
+        worker_class: gevent
+        worker_connections: 100
 
     # Determines whether to use virtual environment caching to speed up
     # deployments (will only install new dependencies; use gondor deploy
