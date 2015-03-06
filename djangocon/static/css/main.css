@@ -1181,4 +1181,18 @@ textarea.markItUpEditor {
 
 }
 
+.django-sticker {
+    display: none;
+}
+@media (min-width: 2200px) {
 
+    .home .django-sticker {
+        display: block;
+        width: 269px;
+        height: 131px;
+        position: absolute;
+        background: transparent url(../images/django_sticker.png) no-repeat center;
+        right: 100px;
+        top: 1058px;
+    }
+}
