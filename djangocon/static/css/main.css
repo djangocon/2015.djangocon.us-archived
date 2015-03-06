@@ -329,12 +329,43 @@ a:hover {
     /*margin-top:70px;*/
     position: relative;
     height:623px;
-    background: rgb(52,52,52) url('../images/test2.jpg') no-repeat center bottom;
+    background: rgb(52,52,52) url('../images/header_z.jpg') no-repeat center bottom;
     background-size: cover;
     border-top: 26px solid #ebdfd7;
     border-left: 26px solid #ebdfd7;
     border-right: 26px solid #ebdfd7;
-    /*border-bottom: 26px solid #ebdfd7;*/
+}
+
+.main-header-y {
+    height: 100%;
+    background: transparent url('../images/header_y.png') no-repeat center bottom;
+}
+
+.main-header-x {
+    height: 100%;
+    background: transparent url('../images/header_x.png') no-repeat center bottom;
+}
+
+.main-header-w {
+    height: 100%;
+    background: transparent url('../images/header_w.png') repeat-x 70% bottom;
+}
+
+.main-header-v {
+    height: 100%;
+    background: transparent url('../images/header_v.png') repeat-x 300% bottom;
+}
+
+.main-header-u {
+    height: 100%;
+    background: transparent url('../images/header_u.png') no-repeat center bottom;
+    background-size: cover;
+}
+
+.main-header-t {
+    height: 100%;
+    background: transparent url('../images/header_t.png') no-repeat center bottom;
+    background-size: cover;
 }
 
 @media (min-width: 1300px) {
@@ -1117,7 +1148,15 @@ textarea.markItUpEditor {
 }
 
 .nail {
+    display: none;
     position: absolute;
+}
+
+@media (min-width: 1200px) {
+    .nail {
+        display: block;
+        position: absolute;
+    }
 }
 .nail-wrapper {
     position: relative;
