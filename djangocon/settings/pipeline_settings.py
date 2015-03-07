@@ -13,7 +13,7 @@ PIPELINE_CSS = {
 }
 
 PIPELINE_JS = {
-    'main': {
+    'base': {
         'source_filenames': (
           'js/vendor/jquery-1.11.0.min.js',
           'js/vendor/bootstrap.js',
