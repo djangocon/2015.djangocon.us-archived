@@ -2,6 +2,7 @@
 
 import os.path
 import posixpath
+import sys
 
 from django.core.urlresolvers import reverse_lazy
 
@@ -237,5 +238,8 @@ SOUTH_MIGRATION_MODULES = {
 
 COMPS_DIR = os.path.join(PACKAGE_ROOT, "templates/comps")
 PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CSSMinCompressor'
+# Find virtualenv `bin` directory on Gondor
+PIPELINE_CSSMIN_BINARY = os.path.join(os.path.dirname(sys.executable),
+                                      'cssmin')
 PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.slimit.SlimItCompressor'
 from .pipeline_settings import *
