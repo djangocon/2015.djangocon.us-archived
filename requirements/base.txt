@@ -5,9 +5,9 @@
 --extra-index-url=http://dist.pinaxproject.com/fresh-start/
 
 # Django packages
-Django==1.6.9
+Django==1.6.10
 django-mailer==0.2a1
-django-redis-cache==0.9.7
+django-redis-cache==0.13.0
 metron==0.1 # 0.2.dev3
 pinax-utils==1.0b1.dev3
 South==1.0.2
