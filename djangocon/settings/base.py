@@ -108,6 +108,7 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.transaction.TransactionMiddleware",
     "reversion.middleware.RevisionMiddleware",
+    "django.middleware.gzip.GZipMiddleware",
 ]
 
 ROOT_URLCONF = "djangocon.urls"
