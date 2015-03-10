@@ -58,6 +58,34 @@ a {
     /*text-shadow: #000 2px 2px 0px, #FF4000 3px 3px 0px, #000 4px 4px 0px, #FF4000 5px 5px 0px;*/
 }
 
+.brdp-text-icon {
+  visibility: hidden;
+  position: relative;
+}
+.brdp-text-icon:after {
+  font-family: 'brandon_printedextras';
+  visibility: visible;
+  position: absolute;
+  top: -13px;
+  left: 0;
+  margin-left: -5px;
+  font-size: 84px;
+}
+.brdp-and:after {
+    content: "Q";
+}
+.brdp-the:after {
+    content: "Z";
+}
+.brdp-the-lower:after {
+    content: "S";
+}
+.brdp-with:after {
+    content: "R";
+}
+.brdp-for:after {
+    content: "T";
+}
 .brdp-icon.date {
     font-size: 30px;
 }
