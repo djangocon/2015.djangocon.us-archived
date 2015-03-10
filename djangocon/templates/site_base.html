@@ -26,9 +26,7 @@
   {% endblock html5shim %}
 
   {% block extra_head_base %}
-    <script type="text/javascript" src="//fast.fonts.net/jsapi/16d592c2-8b8a-4a2c-8fa6-4e0642508fe6.js"></script>
     <link href="{% static 'images/favicon.ico' %}" rel="shortcut icon" />
-
     {% block extra_head %}{% endblock extra_head %}
   {% endblock extra_head_base %}
 </head>
@@ -70,7 +68,7 @@
 
 <div class="row small-header">
     <div class="container">
-        <h1>{% block page_title %}{% endblock page_title %}</h1>
+        <h1 class="brdp">{% block page_title %}{% endblock page_title %}</h1>
     </div>
 </div>
 

@@ -25,20 +25,25 @@ html, body {
 .home div.small-header {display:none;}
 
 body {
-    font-family: 'Lato', sans-serif;
-    color:#007481;
-    font-size: 18px;
+    font-family: 'brandon_printedtwo';
+    font-weight: normal;
+    font-style: normal;
+    color:#333;
+    font-size: 16px;
     line-height: 1.6;
       -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
 
 }
 
-p, h1, h2, h3, span {
+p, h1, h2, h3, span. a {
     -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
     backface-visibility: hidden;
 }
 
+a {
+    color: #009ee3;
+}
 .brdp {
     font-family: 'brandon_printedtwo';
     font-weight: normal;
@@ -99,7 +104,11 @@ h2 {
     border-right: 26px solid #ebdfd7;
 }
 
-
+.base-row {
+    background: #96a623;
+    color: #fff;
+    text-align: center;
+}
 
 .col-centered {
     float: none;
@@ -112,6 +121,19 @@ p a {
     color:inherit;
 }
 p a:hover {color:inherit;}
+
+hr {
+    position: relative;
+    border: 0px solid;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+
+hr:before {
+  content: 'm';
+  font-family: 'brandon_printedextras';
+  font-size: 100px;
+}
 
 .sponsor-detail a {color: inherit;}
 .sponsor-detail a:after {
@@ -207,11 +229,11 @@ legend {color:#007481;}
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
-    color: #fff;
+    color: #96a623;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
-    color: #fff;
+    color: #96a623;
 }
 
 @media (max-width: 767px) {
@@ -252,7 +274,6 @@ legend {color:#007481;}
 
 .navbar {
     height:70px;
-    font-weight: 600;
     font-variant: small-caps;
     text-transform: lowercase;
     font-size:18px;
@@ -422,18 +443,21 @@ legend {color:#007481;}
 }
 
 .small-header {
-    background-color: #82F2FF;
-    min-height: 130px;
-    margin-top: 70px;
-    padding-top: 20px;
-    color: #007481;
+    background: rgb(52,52,52) url('../images/small_header.jpg') no-repeat center bottom;
+    background-size: cover;
+    border-top: 26px solid #ebdfd7;
+    border-left: 26px solid #ebdfd7;
+    border-right: 26px solid #ebdfd7;
+    min-height: 320px;
+    margin-top: 0px;
+    padding-top: 60px;
+    color: #fff;
     text-align: center;
-    background-repeat: no-repeat;
-    background-position: bottom right, top left;
 }
 
 .small-header h1 {
-    font-size: 42px;
+    font-size: 62px;;
+    text-shadow: 4px 4px 2px #af2923;
 }
 
 .announcement-msg {
@@ -509,6 +533,39 @@ legend {color:#007481;}
 
 .header-logo {
     padding-top:78px;
+}
+
+.newsdate {
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  color: #96a623;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 40px;
+}
+
+.newsdate:before {
+  font-family: 'brandon_printedextras';
+  content: '%';
+  color:#fff;
+  font-size: 105px;
+  position: absolute;
+  color: #fff;
+  top: -51px;
+  left: -124px;
+  z-index: 0;
+}
+
+.newsdate:after {
+  font-family: 'brandon_printedextras';
+  content: '%';
+  font-size: 105px;
+  position: absolute;
+  color: #fff;
+  top: -51px;
+  right: -124px;
+  z-index: 0;
 }
 
 .cta-section {
@@ -657,7 +714,7 @@ legend {color:#007481;}
 .news li {
     text-align: center;
     font-size: 18px;
-    font-family:'Nexa Rust Script R W00_03';
+    font-family: 'brandon_printedtwo';
     text-decoration: none;
     padding: 24px 10px 30px;
     list-style-type: none;
@@ -665,9 +722,9 @@ legend {color:#007481;}
     -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, 0.6), inset 0 0 50px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 0 14px rgba(0, 0, 0, 0.6), inset 0 0 50px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6), inset 0 0 50px rgba(0, 0, 0, 0.1);
-    background: #ebdfd7;
-    border: 10px solid #ebdfd7;*/
-    color: #333;
+    background: #d7ccc4;
+    border: 10px solid #ebdfd7;
+    color: #fff;
 
 }
 
@@ -676,7 +733,8 @@ legend {color:#007481;}
 }
 
 .news li p {
-    color: #333;
+    color: #fff;
+    font-size: 14px;
 }
 
 .news li a:hover {
