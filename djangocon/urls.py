@@ -13,19 +13,17 @@ import djangocon.views
 
 WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 urlpatterns = patterns("")
+
 if 'comps' in settings.INSTALLED_APPS:
     urlpatterns += patterns('', url(r'^', include('comps.urls')))
-urlpatterns += patterns("",
+
+urlpatterns += patterns(
+    "",
     url(r"^$",
         # TemplateView.as_view(template_name="splash.html"),
         TemplateView.as_view(template_name="homepage.html"),
         name="home"),
     url(r"^admin/", include(admin.site.urls)),
-
-
-    url(r"^registration/$",
-        TemplateView.as_view(template_name="registration.html"),
-        name="registration"),
 
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
     url(r"^account/login/$", symposion.views.LoginView.as_view(), name="account_login"),
