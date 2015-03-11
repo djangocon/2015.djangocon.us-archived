@@ -111,61 +111,30 @@
 <div class="row sponsors-section">
 
   <div class="container">
-  <div class="col-md-12 col-centered">
-    <h1 class="brdp">OUR SPONSORS</h1>
-  </div>
-  </div>
-
-        <!-- Carousel
-================================================== -->
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-
-              {% sponsors as all_sponsors %}
-                {# sponsors with levels, 6 per slide #}
-                {% for sponsor in all_sponsors %}
-                  {% if forloop.first or forloop.counter0|divisibleby:"6" %}
-                    <div class="container item {% if forloop.first %}active{% endif %}" style="margin: auto;">
-                  {% endif %}
-
-             <div class="col-md-2 col-sm-2 col-xs-6">
-              <div class="sponsor-logo">
-
-                {% if sponsor.external_url %}
-                  <a href="{{ sponsor.external_url }}">
-                {% endif %}
-                  <img src="{% thumbnail sponsor.website_logo "132x80" %}"alt="{{ sponsor.name }}" />
-                {% if sponsor.external_url %}</a>{% endif %}
-
-                </div>
-              <div class="level-label">{{ sponsor.level }}</div>
-            </div>
-                    {% if forloop.counter|divisibleby:"6" or forloop.last %}</div>{% endif %}
-                {% endfor %}
+    <div class="col-md-12 col-centered">
+      <h1 class="brdp">OUR SPONSORS</h1>
     </div>
-    <!-- /Carousel items -->
 
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
+    {% sponsors as all_sponsors %}
+
     {% for sponsor in all_sponsors %}
-        {% if forloop.first or forloop.counter0|divisibleby:"6" %}
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+      <div class="col-md-2 col-sm-2 col-xs-6">
+
+        {% if sponsor.external_url %}
+          <a href="{{ sponsor.external_url }}" class="thumbnail">
+        {% else %}
+          <a href="#" class="thumbnail">
         {% endif %}
+          <img src="{% thumbnail sponsor.website_logo "132x80" %}"alt="{{ sponsor.name }}" />
+          <div class="level-label">{{ sponsor.level }}</div>
+        </a>
+      </div>
+
     {% endfor %}
-    </ol>
-    <!-- /Indicators -->
-
-    <!-- Carousel nav -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    <!-- /Carousel nav -->
-
-  </div><!-- /.carousel -->
-
+  </div>
 </div>
+
 <!-- /sponsors -->
 
 <div class="row divider-section">

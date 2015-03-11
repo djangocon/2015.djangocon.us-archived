@@ -20,7 +20,8 @@
 {% endblock %}
 
 {% block body %}
-<div class="container no-padding page-content">
+<div class="row base-row">
+<div class="container">
     {% with ""|add:schedule.section.name as title %}
     <div class="col-md-6 col-centered announcement-msg">
         {% box "schedule_"|add:title|lower  %}
@@ -46,5 +47,6 @@
                 </div>
         {% endfor %}
     {% endcache %}
+</div>
 </div>
 {% endblock %}

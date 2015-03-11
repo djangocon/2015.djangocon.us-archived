@@ -38,8 +38,8 @@
 {% endblock extra_script %}
 
 {% block body %}
-  
-<div class="container no-padding page-content">
+<div class="row base-row">
+<div class="container">
   <div class="row">
   {% for timetable in days %}
     {% include "schedule/_edit_grid.html" %}
@@ -52,5 +52,6 @@
       <input type="submit" id="delete" name="delete" value="Delete Schedule" />
   </form>
   <div class="modal-markItUp modal fade" id="slotEditModal"></div>
+</div>
 </div>
 {% endblock body %}
