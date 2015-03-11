@@ -6,7 +6,7 @@
 <head>
 <html lang="{{ LANGUAGE_CODE }}">
   <meta charset="UTF-8">
-  <title>{% block head_title_base %}{% if SITE_NAME %}{{ SITE_NAME }} | {% endif %}{% block head_title %}{% endblock head_title %}{% endblock head_title_base %}</title>
+  <title>{% block head_title_base %}{% block head_title %}{% endblock head_title %} | {{ SITE_NAME }} in Austin, TX{% endblock head_title_base %}</title>
   {% block viewport %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% endblock viewport %}
