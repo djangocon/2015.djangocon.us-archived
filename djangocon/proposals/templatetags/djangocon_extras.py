@@ -54,6 +54,7 @@ def the_replace(text, autoescape=None):
         return prefix + text + suffix
     return intra_tag_finder.sub(_amp_process, text)
 
+
 @smart_filter
 def for_replace(text, autoescape=None):
     """Wraps "and" span."""
@@ -102,11 +103,15 @@ def iconreplace(text):
     text = the_lower_replace(text)
     return text
 
-
 def _test():
     import doctest
     doctest.testmod()
 
-
 if __name__ == "__main__":
     _test()
+
+
+@register.filter
+def addstr(arg1, arg2):
+    """concatenate arg1 & arg2"""
+    return str(arg1) + str(arg2)

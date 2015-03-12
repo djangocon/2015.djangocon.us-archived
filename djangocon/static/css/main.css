@@ -154,6 +154,10 @@ h2 {
     text-align: center;
 }
 
+.sponsorships .base-row {
+    background: #009ee3;
+}
+
 .col-centered {
     float: none;
     margin: 0 auto;
@@ -711,50 +715,6 @@ legend {color:#007481;}
     background-repeat: no-repeat;
 }
 
-.sponsors-section .thumbnail {
-  background: transparent;
-  border: 0px solid #ddd;
-}
-
-.sponsors-section h1, .news-section h1 {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.sponsors-section h1 {
-    color:#fff;
-}
-
-.sponsors-section h1:before {
-  content: 'W';
-  position:absolute;
-  font-family: 'brandon_printedextras';
-  left: 49%;
-  height:50px;
-  top:-45px;
-}
-
-.sponsors-section h1 a {
-    color:#fff;
-}
-.sponsorship-detail {
-  display: block;
-  min-height: 420px;
-}
-
-.sponsors-section h3 a {
-    color:#fff;
-    text-decoration: none;
-}
-
-.sponsors-section p {
-  font-size: 13px;
-}
-
-.sponsorship-level-wrapper {
-  text-align: center;
-}
-
 .sponsorship-level {
   display: inline-block;
   position: relative;
@@ -788,8 +748,71 @@ legend {color:#007481;}
   z-index: 0;
 }
 
+.sponsors-section h1, .news-section h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sponsors-section h1 {
+    color:#fff;
+}
+
+.sponsors-section h1:before {
+  content: 'W';
+  position:absolute;
+  font-family: 'brandon_printedextras';
+  left: 49%;
+  height:50px;
+  top:-45px;
+}
+
+.sponsors-section h1 a {
+    color:#fff;
+}
+.sponsorship-detail {
+  display: block;
+  min-height: 540px;
+}
+
+.sponsors-section h3 a {
+    color:#fff;
+    text-decoration: none;
+}
+
+.sponsors-section p {
+  font-size: 12px;
+}
+
+.sponsors-section .thumbnail {
+  background: transparent;
+  border: 0px solid #ddd;
+}
+
+.sponsorship-level-wrapper {
+  text-align: center;
+}
+
 .sponsor-thumbnail {
-  height: 80px;
+  height: 280px;
+  padding-top: 89px;
+  background: #fff;
+  border: 10px solid rgba(0, 158, 227, 0.86);
+  border-radius: 300px;
+}
+@media (min-width: 1200px) {
+  .sponsor-thumbnail {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+.diamond .sponsor-thumbnail {
+  padding-top: 69px;
+}
+
+.silver .sponsor-thumbnail {
+  height: 200px;
+  padding-top: 54px;
 }
 
 .news-section h1 {
@@ -851,7 +874,7 @@ legend {color:#007481;}
 
 .news li p {
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .news li a:hover {
