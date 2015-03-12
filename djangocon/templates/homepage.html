@@ -132,14 +132,9 @@
       {% for sponsor in sponsor.list %}
 
       <div class="col-md-2 col-sm-2 col-xs-6">
-
-        {% if sponsor.external_url %}
-          <a href="{{ sponsor.external_url }}" class="thumbnail">
-        {% else %}
-          <a href="#" class="thumbnail">
-        {% endif %}
+          <a href="{% url 'sponsor_list' %}" class="thumbnail">
             <img src="{% thumbnail sponsor.website_logo "132x80" %}" alt="{{ sponsor.name }}" />
-            <div class="level-label">{{ sponsor.level }}</div>
+            <div class="level-label">{{ sponsor.name }}</div>
           </a>
       </div>
       {% endfor %}

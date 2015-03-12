@@ -228,7 +228,9 @@ legend {color:#007481;}
     -o-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
+    z-index: 1030;
 }
+
 .topspace {
     padding-top: 30px;
 }
@@ -411,7 +413,7 @@ legend {color:#007481;}
     /*margin-top:70px;*/
     position: relative;
     height:623px;
-    background: rgb(52,52,52) url('../images/header_z.jpg') no-repeat center bottom;
+    background: #96a623 url('../images/header_z.jpg') no-repeat center bottom;
     background-size: cover;
     border-top: 26px solid #ebdfd7;
     border-left: 26px solid #ebdfd7;
@@ -420,32 +422,38 @@ legend {color:#007481;}
 
 .main-header-y {
     height: 100%;
+    -webkit-backface-visibility: hidden;
     background: transparent url('../images/header_y.png') no-repeat center bottom;
 }
 
 .main-header-x {
     height: 100%;
+    -webkit-backface-visibility: hidden;
     background: transparent url('../images/header_x.png') no-repeat center bottom;
 }
 
 .main-header-w {
     height: 100%;
+    -webkit-backface-visibility: hidden;
     background: transparent url('../images/header_w.png') repeat-x 70% bottom;
 }
 
 .main-header-v {
     height: 100%;
+    -webkit-backface-visibility: hidden;
     background: transparent url('../images/header_v.png') repeat-x 300% bottom;
 }
 
 .main-header-u {
     height: 100%;
+    -webkit-backface-visibility: hidden;
     background: transparent url('../images/header_u.png') no-repeat center bottom;
     background-size: cover;
 }
 
 .main-header-t {
     height: 100%;
+    -webkit-backface-visibility: hidden;
     background: transparent url('../images/header_t.png') no-repeat center bottom;
     background-size: cover;
 }
@@ -459,16 +467,19 @@ legend {color:#007481;}
         padding-top: 100px;
         padding-bottom: 50px;
         background: url(../images/wood.jpg) repeat;
+
     }
     .poster-shadow {
         padding-left: 20px;
         padding-right: 20px;
         background: url(../images/poster-shadow.png) repeat-y center;
+        -webkit-transform-style: preserve-3d;
         -moz-transform: rotate(1deg);
         -ms-transform: rotate(1deg);
         -o-transform: rotate(1deg);
-        -webkit-transform: rotate(1deg);
+        -webkit-transform: rotateZ(1deg);
         transform: rotate(1deg);
+
     }
 /*    .main-header {
         width: 1300px;
@@ -720,6 +731,19 @@ legend {color:#007481;}
 
 .sponsors-section h1 a {
     color:#fff;
+}
+.sponsorship-detail {
+  display: block;
+  min-height: 420px;
+}
+
+.sponsors-section h3 a {
+    color:#fff;
+    text-decoration: none;
+}
+
+.sponsors-section p {
+  font-size: 13px;
 }
 
 .sponsorship-level-wrapper {
