@@ -115,12 +115,12 @@ strong {
 }
 
 .btn-primary {
-    background-color: #007481;
+    background-color: #EE5A28;
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: #007481;
+    background-color: #EE5A28;
     opacity: 0.8;
     border: none;
 }
@@ -509,6 +509,11 @@ legend {color:#007481;}
     text-align: center;
 }
 
+.sponsorships .small-header {
+    background: rgb(52,52,52) url('../images/small_header_blue.jpg') no-repeat center bottom;
+    background-size: cover;
+}
+
 .small-header h1 {
     font-size: 62px;;
     text-shadow: 4px 4px 2px #af2923;
@@ -783,6 +788,9 @@ legend {color:#007481;}
   z-index: 0;
 }
 
+.sponsor-thumbnail {
+  height: 80px;
+}
 
 .news-section h1 {
     color:#fff;
