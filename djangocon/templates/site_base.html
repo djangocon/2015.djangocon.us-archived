@@ -3,8 +3,8 @@
 {% load pipeline %}
 {% load markitup_tags %}
 {% load sitetree %}
-<head>
 <html lang="{{ LANGUAGE_CODE }}">
+<head>
   <meta charset="UTF-8">
   <title>{% block head_title_base %}{% block head_title %}{% endblock head_title %} | {{ SITE_NAME }} in Austin, TX{% endblock head_title_base %}</title>
   {% block viewport %}
@@ -34,8 +34,8 @@
 <body class="{% block body_class %}{% endblock body_class %}" id="{% block body_id %}{% endblock body_id %}">
 <div class="poster-bg">
 
-<div class="poster-shadow">
-<div class="django-sticker"></div>
+  <div class="poster-shadow">
+    <div class="django-sticker"></div>
 
     {% block topbar_base %}
     <!-- Fixed navbar -->
@@ -66,28 +66,19 @@
     {% endblock topbar_base %}
 
 
-      <div class="row small-header">
-          <div class="container">
-              <h1 class="brdp">{% block page_title %}{% endblock page_title %}</h1>
-          </div>
+    <div class="row small-header">
+      <div class="container">
+        <h1 class="brdp">{% block page_title %}{% endblock page_title %}</h1>
       </div>
+    </div>
 
 
     {% block body_base %}
-
-
       {% block body_outer %}
        {% include "_messages.html" %}
-
-
           {% block body %}{% endblock body %}
-
-
-
       {% endblock body_outer %}
-
     {% endblock body_base %}
-
 
     {% block footer_base %}
 
@@ -97,27 +88,27 @@
           <div class="outer">
             <div class="inner">
               <div class="container">
-              <div class="nail nail-bl"></div>
-              <div class="nail nail-br"></div>
+                <div class="nail nail-bl"></div>
+                <div class="nail nail-br"></div>
                 <div class="col-md-6 col-centered footer-note">
                   <div class="contact-us">Questions? Comments?</div><a href="{% url 'contact_form' %}">Contact Us</a><br>
                   Design + Build by
                       <a href="https://www.lincolnloop.com">Lincoln Loop</a> <br />
                       Hosted on <a href="https://gondor.io">Gondor</a>
                     <p>©{% now "Y" %} DjangoCon</p>
-                  </div>
-               </div>
-            </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
 
 
     {% endblock footer_base %}
 
-</div>
+  </div>
 </div>
   {% block script_base %}
   {% javascript 'base' %}

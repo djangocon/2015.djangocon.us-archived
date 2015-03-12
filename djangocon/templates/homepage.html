@@ -11,78 +11,80 @@
 
 {% block body_class %}home{% endblock %}
 {% block site_brand %}<a class="navbar-brand" href="{% url 'home' %}">
-          <img width="180" height="" class="img-responsive" src="{% static 'images/logo.png' %}"></a>
+          <img width="180" class="img-responsive" src="{% static 'images/logo.png' %}" alt="logo"></a>
 {% endblock site_brand %}
 {% block wrapper_class %}{% endblock wrapper_class %}
 {% block body_outer %}
 
 <!-- headline -->
-      <div class="row main-header">
-        <div class="nail nail-tl"></div>
-        <div class="nail nail-tr"></div>
-        <div class="main-header-y">
-          <div class="main-header-x">
-            <div class="main-header-w">
-              <div class="main-header-v">
-                <div class="main-header-u">
-                  <div class="main-header-t">
-                  </div>
-                </div>
+  <div class="row main-header">
+    <div class="nail nail-tl"></div>
+    <div class="nail nail-tr"></div>
+    <div class="main-header-y">
+      <div class="main-header-x">
+        <div class="main-header-w">
+          <div class="main-header-v">
+            <div class="main-header-u">
+              <div class="main-header-t">
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 <!-- /headline -->
 
 <!-- call to action -->
-      <div class="row cta-section">
-      <div class="container">
+  <div class="row cta-section">
+    <div class="container">
 
-        <div class="col-xs-12 col-sm-4 col-md-4 cta">
-          <div class="cta-paper">
+      <div class="col-xs-12 col-sm-4 col-md-4 cta">
+        <div class="cta-paper">
           <a href="{% url 'cms_page' 'call_for_proposals/' %}">
             <div class="brdp-icon">a</div>
             <div class="cta-content brdp">
             Call<br> for Proposals
             </div>
           </a>
-          </div>
         </div>
+      </div>
 
 
-        <div class="col-xs-12 col-sm-4 col-md-4 cta">
-          <div class="cta-paper">
+      <div class="col-xs-12 col-sm-4 col-md-4 cta">
+        <div class="cta-paper">
           <a href="{% url 'sponsor_apply' %}">
             <div class="brdp-icon">C</div>
             <div class="cta-content brdp">
               Become<br> a Sponsor
             </div>
             </a>
-          </div>
         </div>
+      </div>
 
 
-        <div class="col-xs-12 col-sm-4 col-md-4 cta">
-          <div class="cta-paper">
+      <div class="col-xs-12 col-sm-4 col-md-4 cta">
+        <div class="cta-paper">
           <a href="{% url 'cms_page' 'registration_info/' %}">
             <div class="brdp-icon">K</div>
             <div class="cta-content brdp">
               Registration<br> Info
             </div>
-            </div>
           </a>
-          </div>
         </div>
       </div>
+
+    </div>
+  </div>
 <!-- /call to action -->
 
 <!-- news -->
-    <div class="row news-section">
+  <div class="row news-section">
     <div class="container">
-        <div class=" news col-md-12 col-centered">
-          <h1 class="brdp">LATEST NEWS</h1>
-          <ul>
+      <div class=" news col-md-12 col-centered">
+        <h1 class="brdp">LATEST NEWS</h1>
+        <ul>
+
           {% latest_blog_posts as posts %}
           {% for post in posts|slice:"3" %}
             <div class="col-md-4 col-sm-12">
@@ -101,23 +103,33 @@
             </div>
           {% endfor %}
 
-          </ul>
+        </ul>
       </div>
     </div>
-    </div>
+  </div>
 <!-- /news -->
 
 <!-- sponsors -->
-<div class="row sponsors-section">
+  <div class="row sponsors-section">
 
-  <div class="container">
-    <div class="col-md-12 col-centered">
-      <h1 class="brdp">OUR SPONSORS</h1>
+    <div class="container">
+      <div class="col-md-12 col-centered">
+        <h1 class="brdp">OUR SPONSORS</h1>
+      </div>
     </div>
 
     {% sponsors as all_sponsors %}
+    {% regroup all_sponsors by level as sponsors_list %}
 
-    {% for sponsor in all_sponsors %}
+    {% for sponsor in sponsors_list%}
+    <div class="container">
+      <div class="col-md-12 col-centered sponsorship-level-wrapper">
+        <div class="sponsorship-level">{{sponsor.grouper}}</div>
+      </div>
+    </div>
+
+    <div class="container">
+      {% for sponsor in sponsor.list %}
 
       <div class="col-md-2 col-sm-2 col-xs-6">
 
@@ -126,14 +138,17 @@
         {% else %}
           <a href="#" class="thumbnail">
         {% endif %}
-          <img src="{% thumbnail sponsor.website_logo "132x80" %}"alt="{{ sponsor.name }}" />
-          <div class="level-label">{{ sponsor.level }}</div>
-        </a>
+            <img src="{% thumbnail sponsor.website_logo "132x80" %}" alt="{{ sponsor.name }}" />
+            <div class="level-label">{{ sponsor.level }}</div>
+          </a>
       </div>
+      {% endfor %}
+    </div>
 
     {% endfor %}
+
   </div>
-</div>
+
 
 <!-- /sponsors -->
 

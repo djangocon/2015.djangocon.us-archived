@@ -722,6 +722,43 @@ legend {color:#007481;}
     color:#fff;
 }
 
+.sponsorship-level-wrapper {
+  text-align: center;
+}
+
+.sponsorship-level {
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  color: #009ee3;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 40px;
+}
+
+.sponsorship-level:before {
+  font-family: 'brandon_printedextras';
+  content: '%';
+  color:#fff;
+  font-size: 105px;
+  position: absolute;
+  color: #fff;
+  top: -51px;
+  left: -124px;
+  z-index: 0;
+}
+
+.sponsorship-level:after {
+  font-family: 'brandon_printedextras';
+  content: '%';
+  font-size: 105px;
+  position: absolute;
+  color: #fff;
+  top: -51px;
+  right: -124px;
+  z-index: 0;
+}
+
 
 .news-section h1 {
     color:#fff;
