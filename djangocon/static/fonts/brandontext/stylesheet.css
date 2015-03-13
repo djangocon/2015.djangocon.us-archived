@@ -1,0 +1,61 @@
+
+
+@font-face {
+    font-family: 'brandon_textblack';
+    src: url('HVD Fonts - BrandonText-Black-webfont.eot');
+    src: url('HVD Fonts - BrandonText-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('HVD Fonts - BrandonText-Black-webfont.woff2') format('woff2'),
+         url('HVD Fonts - BrandonText-Black-webfont.woff') format('woff'),
+         url('HVD Fonts - BrandonText-Black-webfont.ttf') format('truetype'),
+         url('HVD Fonts - BrandonText-Black-webfont.svg#brandon_textblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'brandon_textbold';
+    src: url('HVD Fonts - BrandonText-Bold-webfont.eot');
+    src: url('HVD Fonts - BrandonText-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('HVD Fonts - BrandonText-Bold-webfont.woff2') format('woff2'),
+         url('HVD Fonts - BrandonText-Bold-webfont.woff') format('woff'),
+         url('HVD Fonts - BrandonText-Bold-webfont.ttf') format('truetype'),
+         url('HVD Fonts - BrandonText-Bold-webfont.svg#brandon_textbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'brandon_textmedium';
+    src: url('HVD Fonts - BrandonText-Medium-webfont.eot');
+    src: url('HVD Fonts - BrandonText-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('HVD Fonts - BrandonText-Medium-webfont.woff2') format('woff2'),
+         url('HVD Fonts - BrandonText-Medium-webfont.woff') format('woff'),
+         url('HVD Fonts - BrandonText-Medium-webfont.ttf') format('truetype'),
+         url('HVD Fonts - BrandonText-Medium-webfont.svg#brandon_textmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'brandon_text_regularregular';
+    src: url('HVD Fonts - BrandonText-Regular-webfont.eot');
+    src: url('HVD Fonts - BrandonText-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('HVD Fonts - BrandonText-Regular-webfont.woff2') format('woff2'),
+         url('HVD Fonts - BrandonText-Regular-webfont.woff') format('woff'),
+         url('HVD Fonts - BrandonText-Regular-webfont.ttf') format('truetype'),
+         url('HVD Fonts - BrandonText-Regular-webfont.svg#brandon_text_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

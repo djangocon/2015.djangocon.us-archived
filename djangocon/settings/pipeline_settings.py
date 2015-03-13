@@ -3,6 +3,7 @@ PIPELINE_CSS = {
         'source_filenames': (
           'css/bootstrap.min.css',
           'fonts/brandonprinted/stylesheet.css',
+          'fonts/brandontext/stylesheet.css',
           'css/main.css'
         ),
         'output_filename': 'main.css',

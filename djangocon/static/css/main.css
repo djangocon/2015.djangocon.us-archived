@@ -29,7 +29,7 @@ body {
     font-weight: normal;
     font-style: normal;
     color:#333;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -129,13 +129,22 @@ strong {
     border: none;
 }
 
+.blog-content p, .page-content p {
+  font-family: 'brandon_textmedium';
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align: justify
+}
+
 .blog-content ul, ol,
 .page-content ul, ol {
     font-weight: 300;
     list-style-position: inside;
 }
 
-.page-content li, .blog-content {
+.page-content li, .blog-content li {
   list-style: none;
 }
 
