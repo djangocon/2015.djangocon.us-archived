@@ -135,11 +135,11 @@ strong {
     list-style-position: inside;
 }
 
-li {
+.page-content li, .blog-content {
   list-style: none;
 }
 
-li:before {
+.blog-content li:before, .page-content li:before {
   font-family: 'brandon_printedextras';
   content: ">";
   top: 5px;
