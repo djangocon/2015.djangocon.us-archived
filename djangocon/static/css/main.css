@@ -50,8 +50,7 @@ p a {
 }
 
 strong {
-  font-weight: normal;
-  color: #5f6916;
+  font-weight: bold;
 }
 
 .brdp {
@@ -130,12 +129,23 @@ strong {
 }
 
 .blog-content p, .page-content p {
-  font-family: 'brandon_textmedium';
+  font-family: 'brandon_text_regularregular';
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  text-align: justify
+  text-align: justify;
+  -webkit-text-align-last: center; /* Code for Firefox */
+  -moz-text-align-last: center; /* Code for Firefox */
+  text-align-last: center;
+}
+
+@media (min-width: 1300px) {
+  .blog-content p, .page-content p {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  }
 }
 
 .blog-content ul, ol,
@@ -829,7 +839,13 @@ legend {color:#007481;}
 }
 
 .sponsors-section p {
-  font-size: 12px;
+  font-size: 14px;
+  font-family: 'brandon_textmedium';
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align: justify
 }
 
 .sponsors-section .thumbnail {
