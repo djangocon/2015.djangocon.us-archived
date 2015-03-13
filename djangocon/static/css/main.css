@@ -142,8 +142,8 @@ li {
 li:before {
   font-family: 'brandon_printedextras';
   content: ">";
-  top: 10px;
-  font-size: 3em;
+  top: 5px;
+  font-size: 2em;
   left: -10px;
   line-height: 20px;
   position: relative;
@@ -153,7 +153,7 @@ li:before {
   font-size:22px;
 }
 
-.page-content: h2 {
+.page-content h2 {
   margin-top: 100px;
 }
 
@@ -241,7 +241,7 @@ legend {color:#007481;}
     right: -20px;
     left: -20px;
     top: -110px;
-    height: 140px;
+    height: 230px;
     padding-top: 140px;
     background-color: rgba(52,52,52, 1);
     -moz-transform: rotate(3deg);
@@ -534,11 +534,19 @@ legend {color:#007481;}
     border-top: 26px solid #ebdfd7;
     border-left: 26px solid #ebdfd7;
     border-right: 26px solid #ebdfd7;
-    min-height: 320px;
-    margin-top: 0px;
-    padding-top: 60px;
+    min-height: 370px;
+    margin-top: 0;
+    padding-top: 100px;
     color: #fff;
     text-align: center;
+}
+
+@media (max-width: 767px) {
+  .small-header {
+    min-height: 220px;
+    margin-top: 0;
+    padding-top: 60px;
+  }
 }
 
 .sponsorships .small-header {
