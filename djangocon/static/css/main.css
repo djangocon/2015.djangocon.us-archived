@@ -29,7 +29,7 @@ body {
     font-weight: normal;
     font-style: normal;
     color:#333;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -43,6 +43,10 @@ p, h1, h2, h3, span. a {
 
 a {
     color: #009ee3;
+}
+
+p a {
+  text-decoration: underline;
 }
 
 strong {
@@ -125,8 +129,32 @@ strong {
     border: none;
 }
 
+.blog-content ul, ol,
 .page-content ul, ol {
     font-weight: 300;
+    list-style-position: inside;
+}
+
+li {
+  list-style: none;
+}
+
+li:before {
+  font-family: 'brandon_printedextras';
+  content: ">";
+  top: 10px;
+  font-size: 3em;
+  left: -10px;
+  line-height: 20px;
+  position: relative;
+}
+
+.page-content h3 {
+  font-size:22px;
+}
+
+.page-content: h2 {
+  margin-top: 100px;
 }
 
 h4 {
