@@ -50,8 +50,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          {% block site_brand %}
-          {% endblock site_brand %}
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <img width="180" class="img-responsive" src="{% static 'images/logo.png' %}" alt="logo">
+          </a>
         </div>
         <div class="navbar-collapse collapse">
           {% block nav %}
