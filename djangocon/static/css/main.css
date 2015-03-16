@@ -1592,6 +1592,14 @@ textarea.markItUpEditor {
     .footer-note:before {
         display: none;
     }
+    .footer-note:hover {
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
