@@ -389,6 +389,12 @@ a.anchor {
         left: -110px;
         top: -200px;
     }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .navbar-wrapper {
+        left: -110px;
+        top: -100px;
+      }
+    }
 }
 
 .navbar-header {
@@ -714,6 +720,12 @@ a.anchor {
   z-index: 0;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .newsdate:after, .newsdate:before {
+    top: -70px;
+  }
+}
+
 .newsitem a {
   color: #fff;
 }
@@ -833,6 +845,12 @@ a.anchor {
   top: -60px;
   right: -124px;
   z-index: 0;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .sponsorship-level:after, .sponsorship-level:before {
+    top: -70px;
+  }
 }
 
 .sponsors-section h1, .news-section h1 {
