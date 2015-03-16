@@ -899,6 +899,7 @@ legend {color:#007481;}
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
 }
 .sponsor-thumbnail img {
   margin: 0 auto;
