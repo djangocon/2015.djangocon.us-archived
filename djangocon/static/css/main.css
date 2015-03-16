@@ -156,6 +156,12 @@ strong {
 
 .page-content li, .blog-content li {
   list-style: none;
+  margin-bottom: 20px;
+}
+
+.page-content li a, .blog-content li a {
+  text-decoration: underline;
+  color: #fff;
 }
 
 .blog-content li:before, .page-content li:before {
