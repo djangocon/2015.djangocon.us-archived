@@ -25,7 +25,7 @@ html, body {
 .home div.small-header {display:none;}
 
 body {
-    font-family: 'brandon_printedtwo';
+    font-family: 'BrandonPrinted-Two';
     font-weight: normal;
     font-style: normal;
     color:#333;
@@ -62,13 +62,13 @@ input {
 }
 
 .brdp {
-    font-family: 'brandon_printedtwo';
+    font-family: 'BrandonPrinted-Two';
     font-weight: normal;
     font-style: normal;
 }
 
 .brdp-icon {
-    font-family: 'brandon_printedextras';
+    font-family: 'BrandonPrinted-Extras';
     font-weight: normal;
     font-style: normal;
     color: #f7f1ec;
@@ -81,7 +81,7 @@ input {
 }
 
 .brdp-finger:before {
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   content: ">";
   top: 12px;
   font-size: 3em;
@@ -90,10 +90,10 @@ input {
 }
 
 .brdp-text-icon:after {
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   visibility: visible;
   position: absolute;
-  top: -13px;
+  top: -33px;
   left: 0;
   margin-left: -5px;
   font-size: 84px;
@@ -137,7 +137,7 @@ input {
 }
 
 .blog-content p, .page-content p {
-  font-family: 'brandon_textmedium';
+  font-family: 'BrandonText-Medium';
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -173,7 +173,7 @@ input {
 }
 
 .blog-content li:before, .page-content li:before {
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   content: ">";
   top: 5px;
   font-size: 2em;
@@ -239,7 +239,7 @@ hr {
 
 hr:before {
   content: 'm';
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   font-size: 100px;
 }
 
@@ -353,6 +353,8 @@ legend {color:#007481;}
     .navbar-wrapper {
         right: 0px;
         left: 0px;
+        top: -140px;
+        height: 200px;
         -moz-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         -o-transform: rotate(0deg);
@@ -366,7 +368,11 @@ legend {color:#007481;}
         -o-transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
-        margin-top: -40px;
+        margin-top: -10px;
+    }
+
+    .navbar-wrapper:hover .navbar-brand {
+      margin-top: -10px;
     }
 }
 
@@ -678,7 +684,7 @@ legend {color:#007481;}
 }
 
 .newsdate:before {
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   content: '%';
   color:#fff;
   font-size: 105px;
@@ -690,7 +696,7 @@ legend {color:#007481;}
 }
 
 .newsdate:after {
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   content: '%';
   font-size: 105px;
   position: absolute;
@@ -799,24 +805,24 @@ legend {color:#007481;}
 }
 
 .sponsorship-level:before {
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   content: '%';
   color:#fff;
   font-size: 105px;
   position: absolute;
   color: #fff;
-  top: -51px;
+  top: -60px;
   left: -124px;
   z-index: 0;
 }
 
 .sponsorship-level:after {
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   content: '%';
   font-size: 105px;
   position: absolute;
   color: #fff;
-  top: -51px;
+  top: -60px;
   right: -124px;
   z-index: 0;
 }
@@ -833,7 +839,7 @@ legend {color:#007481;}
 .sponsors-section h1:before {
   content: 'W';
   position:absolute;
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   left: 49%;
   height:50px;
   top:-45px;
@@ -858,7 +864,7 @@ legend {color:#007481;}
 
 .sponsors-section p {
   font-size: 14px;
-  font-family: 'brandon_textmedium';
+  font-family: 'BrandonText-Medium';
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -924,7 +930,7 @@ legend {color:#007481;}
 }
 
 .gold .sponsor-thumbnail, .silver .sponsor-thumbnail, .bronze .sponsor-thumbnail {
-  height: 200px;
+  height: 190px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -971,7 +977,7 @@ legend {color:#007481;}
 .news-section h1:before {
   content: 'Z';
   position:absolute;
-  font-family: 'brandon_printedextras';
+  font-family: 'BrandonPrinted-Extras';
   left: 49%;
   height:50px;
   top:-45px;
@@ -1005,7 +1011,7 @@ legend {color:#007481;}
 .news li {
     text-align: center;
     font-size: 18px;
-    font-family: 'brandon_printedtwo';
+    font-family: 'BrandonPrinted-Two';
     text-decoration: none;
     padding: 24px 10px 30px;
     list-style-type: none;
@@ -1171,7 +1177,7 @@ legend {color:#007481;}
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: 'brandon_printedextras';
+    font-family: 'BrandonPrinted-Extras';
     font-style: normal;
     font-weight: 400;
     line-height: 1;
