@@ -132,7 +132,7 @@
       {% for sponsor in sponsor.list %}
 
       <div class="col-md-3 col-sm-3 col-xs-6 sponsorship-detail bronze">
-          <a href="{% url 'sponsor_list' %}#{{sponsor.name|slugify}}" class="thumbnail">
+          <a href="{% url 'sponsor_list' %}#{{ sponsor.name|slugify }}" class="thumbnail">
             <div class="sponsor-thumbnail">
             <img src="{% thumbnail sponsor.website_logo "132x80" %}" alt="{{ sponsor.name }}" />
             </div>
