@@ -686,6 +686,10 @@ legend {color:#007481;}
   z-index: 0;
 }
 
+.newsitem a {
+  color: #fff;
+}
+
 .cta-section {
     background-color: #96a623;
     padding:30px 0;
