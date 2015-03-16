@@ -2,6 +2,7 @@
 
 import os.path
 import posixpath
+import sys
 
 from django.core.urlresolvers import reverse_lazy
 
@@ -84,7 +85,9 @@ STATICFILES_DIRS = [
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "pipeline.finders.PipelineFinder",
 ]
+STATICFILES_STORAGE = 'djangocon.core.gzip_storage.GZIPPipelineStorage'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -105,6 +108,7 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.transaction.TransactionMiddleware",
     "reversion.middleware.RevisionMiddleware",
+    "django.middleware.gzip.GZipMiddleware",
 ]
 
 ROOT_URLCONF = "djangocon.urls"
@@ -157,7 +161,7 @@ INSTALLED_APPS = [
     "sitetree",
     "account",
     "model_utils",
-    "biblion",
+    "pipeline",
 
     # symposion
     "symposion",
@@ -233,3 +237,9 @@ SOUTH_MIGRATION_MODULES = {
 }
 
 COMPS_DIR = os.path.join(PACKAGE_ROOT, "templates/comps")
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CSSMinCompressor'
+# Find virtualenv `bin` directory on Gondor
+PIPELINE_CSSMIN_BINARY = os.path.join(os.path.dirname(sys.executable),
+                                      'cssmin')
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.slimit.SlimItCompressor'
+from .pipeline_settings import *

@@ -8,7 +8,7 @@ vcs: git
 runtime: python-2.7.3
 
 # This path is relative to your project root (the directory gondor.yml lives in.)
-requirements_file: requirements/base.txt
+requirements_file: requirements/deploy.txt
 
 # Commands to be executed during deployment. These can handle migrations or
 # moving static files into place. Accepts same parameters as gondor run.
@@ -20,8 +20,8 @@ on_deploy:
 # URLs which should be served by Gondor mapping to a filesystem location
 # relative to your writable storage area.
 static_urls:
-    - /site_media:
-        root: site_media/
+    - /site_media/media:
+        root: site_media/media/
 
 wsgi:
     # The WSGI entry point of your application in two parts separated by a
@@ -37,7 +37,8 @@ wsgi:
     gunicorn:
         # The worker class used to run gunicorn (possible values include:
         # sync, eventlet and gevent)
-        worker_class: sync
+        worker_class: gevent
+        worker_connections: 100
 
     # Determines whether to use virtual environment caching to speed up
     # deployments (will only install new dependencies; use gondor deploy

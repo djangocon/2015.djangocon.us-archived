@@ -3,13 +3,15 @@ import urlparse
 
 from .base import *
 
-DEBUG = {"dev": True}.get(os.environ["GONDOR_INSTANCE"], False)
+DEBUG = False
+GONDOR_INSTANCE = os.environ.get("GONDOR_INSTANCE", None)
 
 ALLOWED_HOSTS = [
     'cs998.gondor.co',
     '2015.djangocon.us',
     'djangocon.us',
-    'www.djangocon.us'
+    'www.djangocon.us',
+    'ol579.gondor.co'
 ]
 
 if "GONDOR_DATABASE_URL" in os.environ:
@@ -51,11 +53,19 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = False
 
 SITE_ID = int(os.environ.get("SITE_ID", "1"))
 
+if GONDOR_INSTANCE == 'develop':
+    CDN_URL = "http://staging.djangocon.us.global.prod.fastly.net/"
+elif GONDOR_INSTANCE == 'production':
+    CDN_URL = "//djangocon-us.global.ssl.fastly.net/"
+else:
+    CDN_URL = "/"
+
+STATIC_URL = CDN_URL + "site_media/static/"
+MEDIA_URL = CDN_URL + "site_media/media/"
+
 MEDIA_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "media")
 STATIC_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "static")
 
-MEDIA_URL = "/site_media/media/"  # make sure this maps inside of site_media_url
-STATIC_URL = "/site_media/static/"  # make sure this maps inside of site_media_url
 ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
 
 FILE_UPLOAD_PERMISSIONS = 0640
