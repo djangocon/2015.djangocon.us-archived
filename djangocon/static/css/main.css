@@ -296,6 +296,14 @@ legend {color:#007481;}
     z-index: 1030;
 }
 
+a.anchor {
+  /* don't allow named anchors to get covered up by menubar */
+  display: block;
+  position: relative;
+  top: -130px;
+  visibility: hidden;
+}
+
 .topspace {
     padding-top: 30px;
 }

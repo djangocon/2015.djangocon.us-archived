@@ -10,6 +10,7 @@
 
   {% for sponsor in sponsor.list %}
   <div class="col-md-3 col-sm-3 col-xs-6 sponsorship-detail bronze">
+    <a class="anchor" id="{{ sponsor.name|slugify }}"></a>
     <div class="sponsor-thumbnail">
       <img src="{% thumbnail sponsor.website_logo '132x80' %}" alt="{{ sponsor.name }}" />
     </div>
