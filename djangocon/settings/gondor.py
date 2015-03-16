@@ -55,8 +55,9 @@ SITE_ID = int(os.environ.get("SITE_ID", "1"))
 
 if GONDOR_INSTANCE == 'develop':
     CDN_URL = "http://staging.djangocon.us.global.prod.fastly.net/"
+elif GONDOR_INSTANCE == 'production':
+    CDN_URL = "//djangocon-us.global.ssl.fastly.net/"
 else:
-    # TODO setup instance for prod
     CDN_URL = "/"
 
 STATIC_URL = CDN_URL + "site_media/static/"
