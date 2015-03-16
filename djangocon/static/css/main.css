@@ -53,6 +53,14 @@ strong {
   font-weight: bold;
 }
 
+input {
+  color: #333;
+  background: #fff;
+}
+.contact-form {
+  margin-bottom: 50px;
+}
+
 .brdp {
     font-family: 'brandon_printedtwo';
     font-weight: normal;

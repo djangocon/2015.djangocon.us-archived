@@ -9,13 +9,17 @@
 {% block page_title %}Contact Us{% endblock page_title %}
 
 {% block body %}
+<div class="row base-row">
+
  <div class="container">
     <div class="col-md-6 col-centered">
-        <form action="." method="POST">
+        <form action="." method="POST" class="contact-form">
             {% csrf_token %}
             {{ form|as_bootstrap }}
-            <input type="submit" name="submit" value="Submit" />
+            <input type="submit" class="btn" name="submit" value="Submit" />
+            <br>
         </form>
     </div>
+</div>
 </div>
 {% endblock body %}
