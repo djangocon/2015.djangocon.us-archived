@@ -133,7 +133,9 @@
 
       <div class="col-md-2 col-sm-2 col-xs-6">
           <a href="{% url 'sponsor_list' %}" class="thumbnail">
+            <div class="sponsor-homepage-thumbnail">
             <img src="{% thumbnail sponsor.website_logo "132x80" %}" alt="{{ sponsor.name }}" />
+            </div>
             <div class="level-label">{{ sponsor.name }}</div>
           </a>
       </div>
