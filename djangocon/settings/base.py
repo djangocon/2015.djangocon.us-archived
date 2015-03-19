@@ -235,6 +235,20 @@ PROPOSAL_FORMS = {
     "open-space": "djangocon.proposals.forms.OpenSpaceProposalForm",
 }
 
+
+METRON_SETTINGS = {
+    "google": {
+        3: os.environ.get("GA_TOKEN"),
+    },
+    "gauges": {
+        3: os.environ.get("GAUGES_TOKEN")
+    },
+    "mixpanel": {
+        3: os.environ.get("MIXPANEL_API_TOKEN"),
+    }
+}
+
+
 SESSION_COOKIE_NAME = "DJANGOCON2015"
 
 THEME_CONTACT_EMAIL = ''
