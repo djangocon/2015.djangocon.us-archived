@@ -28,6 +28,7 @@ Pillow==2.7.0
 psycopg2==2.4.6
 pytz==2012g
 redis==2.7.2
+opbeat==2.0.1
 
 # Theme requirements
 pinax-theme-bootstrap==5.1.0
