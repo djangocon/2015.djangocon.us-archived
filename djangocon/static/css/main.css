@@ -57,6 +57,10 @@ input {
   color: #333;
   background: #fff;
 }
+
+input[type="text"], textarea  {
+  font-family: 'BrandonText-Medium';
+}
 .contact-form {
   margin-bottom: 50px;
 }
