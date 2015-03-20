@@ -55,7 +55,7 @@ SITE_ID = int(os.environ.get("SITE_ID", "1"))
 
 if GONDOR_INSTANCE == 'develop':
     CDN_URL = "http://staging.djangocon.us.global.prod.fastly.net/"
-elif GONDOR_INSTANCE == 'production':
+elif GONDOR_INSTANCE == 'primary':
     CDN_URL = "//djangocon-us.global.ssl.fastly.net/"
 else:
     CDN_URL = "/"
@@ -96,7 +96,7 @@ LOGGING = {
     }
 }
 
-DEFAULT_FROM_EMAIL = ""
+DEFAULT_FROM_EMAIL = "DjangoCon 2015 <noreply@djangocon.us>"
 
 if "GONDOR_SENDGRID_USER" in os.environ:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

@@ -101,6 +101,7 @@ TEMPLATE_LOADERS = [
 ]
 
 MIDDLEWARE_CLASSES = [
+    "opbeat.contrib.django.middleware.OpbeatAPMMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -149,6 +150,7 @@ INSTALLED_APPS = [
     "bootstrapform",
 
     # external
+    "opbeat.contrib.django",
     "biblion",
     "south",
     "mailer",
@@ -178,6 +180,12 @@ INSTALLED_APPS = [
     # project
     "djangocon.proposals",
 ]
+
+OPBEAT = {
+    "ORGANIZATION_ID": os.environ.get("OPBEAT_ORG_ID"),
+    "APP_ID": os.environ.get("OPBEAT_APP_ID"),
+    "SECRET_TOKEN": os.environ.get("OPBEAT_SECRET_TOKEN")
+}
 
 FIXTURE_DIRS = [
     os.path.join(PROJECT_ROOT, "fixtures"),
@@ -226,6 +234,20 @@ PROPOSAL_FORMS = {
     "talk-45-min": "djangocon.proposals.forms.TalkProposalForm",
     "open-space": "djangocon.proposals.forms.OpenSpaceProposalForm",
 }
+
+
+METRON_SETTINGS = {
+    "google": {
+        3: os.environ.get("GA_TOKEN"),
+    },
+    "gauges": {
+        3: os.environ.get("GAUGES_TOKEN")
+    },
+    "mixpanel": {
+        3: os.environ.get("MIXPANEL_API_TOKEN"),
+    }
+}
+
 
 SESSION_COOKIE_NAME = "DJANGOCON2015"
 

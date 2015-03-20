@@ -3,6 +3,7 @@
 {% load pipeline %}
 {% load markitup_tags %}
 {% load sitetree %}
+{% load metron_tags %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="UTF-8">
@@ -119,5 +120,6 @@
   {% block extra_body_base %}
     {% block extra_body %}{% endblock extra_body %}
   {% endblock extra_body_base %}
+  {% analytics %}
 </body>
 </html>
