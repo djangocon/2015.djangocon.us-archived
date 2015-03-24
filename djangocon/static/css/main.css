@@ -223,6 +223,17 @@ h2 {
     background: #009ee3;
 }
 
+.sponsors-section .container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+}
 .col-centered {
     float: none;
     margin: 0 auto;
