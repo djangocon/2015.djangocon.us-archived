@@ -232,7 +232,7 @@ h2 {
           flex-direction: row;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
 }
 .col-centered {
     float: none;
