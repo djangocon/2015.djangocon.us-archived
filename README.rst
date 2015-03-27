@@ -7,7 +7,7 @@ will may make things more difficult for you.
 To get running locally
 ----------------------
 
-This documentation assume you have the following installed::
+This documentation assume you have the following installed:
 
 - `pip >= 1.2.1 <http://www.pip-installer.org/>`_
 - `virtualenv >= 1.11 <http://www.virtualenv.org/>`_
