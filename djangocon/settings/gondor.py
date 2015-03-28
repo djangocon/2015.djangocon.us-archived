@@ -83,7 +83,11 @@ LOGGING = {
             "level": "DEBUG",
             "class": "logging.StreamHandler",
             "formatter": "simple"
-        }
+        },
+        'opbeat': {
+            'level': 'WARNING',
+            'class': 'opbeat.contrib.django.handlers.OpbeatHandler',
+        },
     },
     "root": {
         "handlers": ["console"],
@@ -92,6 +96,11 @@ LOGGING = {
     "loggers": {
         "django.request": {
             "propagate": True,
+        },
+        'opbeat.errors': {
+            'level': 'ERROR',
+            'handlers': ['console'],
+            'propagate': False,
         },
     }
 }
