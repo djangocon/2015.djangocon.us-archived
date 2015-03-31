@@ -134,9 +134,7 @@
       <div class="col-md-3 col-sm-3 col-xs-6 sponsorship-detail bronze">
           <a href="{% url 'sponsor_list' %}#{{ sponsor.name|slugify }}" class="thumbnail">
             <div class="sponsor-thumbnail">
-              <a href="{{ sponsor.external_url }}">
                 <img src="{% thumbnail sponsor.website_logo "132x80" %}" alt="{{ sponsor.name }}" />
-              </a>
             </div>
             <div class="level-label">{{ sponsor.name }}</div>
           </a>
