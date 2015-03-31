@@ -4,6 +4,8 @@
 {% load tz %}
 {% load djangocon_extras %}
 
+{% block head_title %}{{ post.title }}{% endblock head_title %}
+
 {% block page_title %}{{ post.title }}{% endblock page_title %}
 
 {% block body_class %}blog{% endblock %}
