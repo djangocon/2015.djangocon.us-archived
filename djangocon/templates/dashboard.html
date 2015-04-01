@@ -14,8 +14,9 @@
 {% block body_class %}cms-page{% endblock %}
 
 {% block body %}
- <div class="container">
-	<div id="proposals" class="panel panel-default">
+<div class="row base-row">
+  <div class="container">
+    <div id="proposals" class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-bullhorn"></i> {% trans "Speaking" %}
             <div class="pull-right header-actions">
@@ -219,5 +220,6 @@
             </div>
         </div>
     {% endif %}
-    </div>
+  </div>
+</div>
 {% endblock %}
