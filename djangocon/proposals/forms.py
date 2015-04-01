@@ -42,11 +42,13 @@ class TalkProposalForm(ProposalForm):
             "description",
             "abstract",
             "additional_notes",
+            "special_requirements",
             "recording_release",
         ]
         widgets = {
             "abstract": MarkItUpWidget(),
             "additional_notes": MarkItUpWidget(),
+            "special_requirements": MarkItUpWidget(),
         }
 
 
@@ -60,9 +62,11 @@ class TutorialProposalForm(ProposalForm):
             "description",
             "abstract",
             "additional_notes",
+            "special_requirements",
             "recording_release",
         ]
         widgets = {
             "abstract": MarkItUpWidget(),
             "additional_notes": MarkItUpWidget(),
+            "special_requirements": MarkItUpWidget(),
         }
