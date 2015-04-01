@@ -58,6 +58,8 @@ input {
   background: #fff;
 }
 
+
+
 input[type="text"], textarea  {
   font-family: 'BrandonText-Medium';
 }
@@ -273,7 +275,7 @@ hr:before {
     border-color: #fff;
 }
 
-legend {color:#007481;}
+legend {color:#fff;}
 
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
     background-color: #fff;
@@ -1699,4 +1701,12 @@ textarea.markItUpEditor {
         right: 100px;
         top: 1058px;
     }
+}
+
+
+.radio input[type=radio], .radio-inline input[type=radio], .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox] {
+  float: none;
+}
+form {
+  margin-bottom: 50px;
 }
