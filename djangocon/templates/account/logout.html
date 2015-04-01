@@ -6,11 +6,10 @@
 {% block page_title %}Log Out{% endblock page_title %}
 
 {% block body %}
-<div class="row base-row">
     <div class="container">
         <div class="col-md-6 col-centered">
             <form method="POST" action="{% url "account_logout" %}">
-
+               
                 <fieldset>
                     {% csrf_token %}
                     <p>{% trans "Are you sure you want to log out?" %}</p>
@@ -19,5 +18,4 @@
             </form>
         </div>
     </div>
-</div>
 {% endblock %}

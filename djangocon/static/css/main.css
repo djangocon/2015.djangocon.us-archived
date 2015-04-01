@@ -457,18 +457,14 @@ a.anchor {
     letter-spacing: 0;
 }
 
-#capsules ul li:last-child {
-  margin-left: 10px;
-}
-
 #capsules ul li a {
-    background-color: #EE5A28;
+     background-color: #EE5A28;
     border-radius: 15px;
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 14px;
     margin-right: 4px;
     margin-top: 14px;
-    padding: 6px 11px;
+    padding: 0 11px 4px;
 }
 
 .navbar-right .dropdown-menu {
@@ -1703,18 +1699,4 @@ textarea.markItUpEditor {
         right: 100px;
         top: 1058px;
     }
-}
-
-form {
-  margin-bottom: 44px;
-  text-align: left;
-}
-
-.has-error .control-label {
-  color: #FFFFFF;
-}
-
-.signup-form .btn-primary,
-.login-form .btn-primary {
-  background: rgba(52,52,52, 1);
 }

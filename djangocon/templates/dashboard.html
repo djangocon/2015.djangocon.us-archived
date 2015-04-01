@@ -7,16 +7,12 @@
 
 {% block head_title %}Dashboard{% endblock head_title %}
 
-{% block page_title %}Dashboard{% endblock page_title %}
-
 {% block body_id %}dashboard{% endblock body_id %}
-
-{% block body_class %}cms-page{% endblock %}
+{% block body_class %}auth{% endblock body_class %}
 
 {% block body %}
-<div class="row base-row">
-  <div class="container">
-    <div id="proposals" class="panel panel-default">
+ <div class="container">
+	<div id="proposals" class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-bullhorn"></i> {% trans "Speaking" %}
             <div class="pull-right header-actions">
@@ -220,6 +216,5 @@
             </div>
         </div>
     {% endif %}
-  </div>
-</div>
+    </div>
 {% endblock %}
