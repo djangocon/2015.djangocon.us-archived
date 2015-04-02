@@ -4,6 +4,7 @@
 {% load proposal_tags %}
 {% load review_tags %}
 {% load teams_tags %}
+{% load waffle_tags %}
 
 {% block head_title %}Dashboard{% endblock head_title %}
 
@@ -28,9 +29,11 @@
                     <a href="{% url 'speaker_edit' %}" class="btn btn-default">
                         <i class="fa fa-pencil"></i> Edit your speaker profile
                     </a>
-                    <a href="{% url 'proposal_submit' %}" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Submit a new proposal
-                    </a>
+                    {% flag "submit-proposals" %}
+                        <a href="{% url 'proposal_submit' %}" class="btn btn-default">
+                            <i class="fa fa-plus"></i> Submit a new proposal
+                        </a>
+                    {% endflag %}
                 {% endif %}
             </div>
         </div>

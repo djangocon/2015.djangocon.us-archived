@@ -4,6 +4,7 @@
 {% load markitup_tags %}
 {% load sitetree %}
 {% load metron_tags %}
+{% load waffle_tags %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="UTF-8">
@@ -59,9 +60,11 @@
           {% block nav %}
             {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap3.html" %}
           {% endblock nav %}
-          {% block account_bar %}
-            {% include "_account_bar.html" %}
-          {% endblock account_bar %}
+          {% flag "open-registration" %}
+            {% block account_bar %}
+              {% include "_account_bar.html" %}
+            {% endblock account_bar %}
+          {% endflag %}
 -        </div>
         <!--/.nav-collapse -->
         {% endblock topbar %}
