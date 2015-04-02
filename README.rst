@@ -47,6 +47,20 @@ Run local server::
 
     python manage.py runserver
 
+Feature Flags
+-------------
+
+Feature flags are used to open registration and to allow proposals to be
+submitted. To create the initial flags::
+
+    python manage.py flag open-registration --create --superusers --staff --authenticated
+    python manage.py flag submit-proposals --create --superusers --staff --authenticated
+
+To enable a flag::
+
+    python manage.py flag open-registration --everyone
+    python manage.py flag submit-proposals --everyone
+
 For Gondor
 --------------
 

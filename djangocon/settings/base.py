@@ -108,6 +108,7 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.transaction.TransactionMiddleware",
+    'waffle.middleware.WaffleMiddleware',
     "reversion.middleware.RevisionMiddleware",
     "django.middleware.gzip.GZipMiddleware",
 ]
@@ -164,6 +165,7 @@ INSTALLED_APPS = [
     "account",
     "model_utils",
     "pipeline",
+    "waffle",
 
     # symposion
     "symposion",
@@ -256,6 +258,7 @@ SERVER_EMAIL = ''
 
 SOUTH_MIGRATION_MODULES = {
     'proposals': 'djangocon.proposals.migrations',
+    'waffle': 'waffle.south_migrations',
 }
 
 COMPS_DIR = os.path.join(PACKAGE_ROOT, "templates/comps")
