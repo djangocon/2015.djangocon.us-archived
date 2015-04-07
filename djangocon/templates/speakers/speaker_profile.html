@@ -12,6 +12,7 @@
 {% block body_class %}full{% endblock body_class %}
 
 {% block body %}
+<div class="row base-row">
      <div class="container">
         <div class="span2">
             {% if speaker.photo %}
@@ -39,8 +40,9 @@
                     </p>
                 {% endif %}
             {% empty %}
-                <p>No presentations. This page is only visible to staff until there is a presentation.<p>
+                <p>No presentations. This page is only visible to staff until there is a presentation.</p>
             {% endfor %}
         </div>
     </div>
+</div>
 {% endblock %}
