@@ -11,7 +11,8 @@
 {% block page_title %}{% trans "Account" %}{% endblock page_title %}
 
 {% block body %}
-    <div class="row">
+<div class="row base-row">
+    <div class="container">
         <div class="col-md-5">
             <form method="POST" action="{% url "account_settings" %}">
                 <legend>{% trans "Account" %}</legend>
@@ -21,4 +22,5 @@
             </form>
         </div>
     </div>
+</div>
 {% endblock %}

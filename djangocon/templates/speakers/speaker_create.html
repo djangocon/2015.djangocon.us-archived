@@ -12,6 +12,7 @@
 {% block body %}
 <div class="row base-row">
  <div class="container">
+    <div class="col-md-7 col-sm-9 col-xs-11 col-centered">
     {% box "speaker-profile" %}
 
     <form method="POST" action="" enctype="multipart/form-data">
@@ -25,6 +26,7 @@
             <a class="btn" href="{% url 'dashboard' %}">Cancel</a>
         </div>
     </form>
+    </div>
  </div>
  </div>
 {% endblock %}

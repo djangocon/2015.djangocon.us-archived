@@ -99,7 +99,7 @@
             <i class="fa fa-briefcase"></i> {% trans "Sponsorship" %}
             <div class="pull-right header-actions">
                 {% if not user.sponsorships.exists %}
-                    <a href="{% url 'sponsor_apply' %}" class="btn">
+                    <a href="{% url 'sponsor_apply' %}" class="btn btn-default">
                         <i class="fa fa-plus"></i> Apply to be a sponsor
                     </a>
                 {% endif %}
