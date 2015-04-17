@@ -4,6 +4,12 @@ DjangoCon 2015
 DjangoCon 2015 is built on top of Pinax Symposion but may have customizations that
 will may make things more difficult for you.
 
+Code of Conduct
+---------------
+
+As a contributor, you can help us keep the Django community open and inclusive.
+Please read and follow our `Code of Conduct <https://www.djangoproject.com/conduct/>`_.
+
 To get running locally
 ----------------------
 
