@@ -230,17 +230,6 @@ h2 {
   background: #009ee3;
 }
 
-.sponsors-section .container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
 .col-centered {
     float: none;
     margin: 0 auto;
@@ -979,16 +968,9 @@ a.anchor {
 }
 
 .gold .sponsor-thumbnail, .silver .sponsor-thumbnail, .bronze .sponsor-thumbnail {
-  height: 120px;
+  height: 190px;
 }
-@media (min-width: 528px) and (max-width: 767px) {
-  .gold .sponsor-thumbnail, .silver .sponsor-thumbnail, .bronze .sponsor-thumbnail {
-    height: 180px;
-  }
-  .sponsor-thumbnail img {
-    width: 80%;
-  }
-}
+
 @media (min-width: 768px) and (max-width: 991px) {
 
   .diamond .sponsor-thumbnail {
@@ -1009,9 +991,6 @@ a.anchor {
     margin-left: 80px;
     margin-right: 80px;
   }
-  .gold .sponsor-thumbnail, .silver .sponsor-thumbnail, .bronze .sponsor-thumbnail {
-    height: 210px;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -1023,9 +1002,6 @@ a.anchor {
     height: 390px;
     margin-left: 80px;
     margin-right: 80px;
-  }
-  .gold .sponsor-thumbnail, .silver .sponsor-thumbnail, .bronze .sponsor-thumbnail {
-    height: 200px;
   }
 }
 
