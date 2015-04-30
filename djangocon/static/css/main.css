@@ -226,6 +226,9 @@ h2 {
   text-align: center;
 }
 
+.base-row .well {
+  color: #333;
+}
 .sponsorships .base-row {
   background: #009ee3;
 }
