@@ -1,0 +1,41 @@
+body {
+  font-family: 'BrandonPrinted-Two';
+}
+.page-content {
+    text-align: center;
+}
+
+.blog-content ul, ol,
+.page-content ul, ol {
+    padding-left: 40px;
+}
+
+.blog-content li, .page-content li {
+  font-weight: 400;
+}
+
+.blog-content li:before, .page-content li:before {
+  left: -10px;
+}
+
+.sponsor-homepage-thumbnail {
+  height: 150px;
+  background: #fff;
+  border: 10px solid rgba(0, 158, 227, 0.86);
+  border-radius: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.sponsor-homepage-thumbnail img {
+  margin: 0 auto;
+}
