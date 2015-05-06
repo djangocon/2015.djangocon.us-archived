@@ -9,6 +9,10 @@
 
 {% block head_title %}{% trans "Welcome" %}{% endblock %}
 
+{% block extra_style %}
+  <link rel="stylesheet" href="{% static "css/home.css" %}" />
+{% endblock extra_style %}
+
 {% block body_class %}home{% endblock %}
 {% block site_brand %}<a class="navbar-brand" href="{% url 'home' %}">
           <img width="180" class="img-responsive" src="{% static 'images/logo.png' %}" alt="logo"></a>
