@@ -1,5 +1,6 @@
 body {
   font-family: 'BrandonPrinted-Two';
+  line-height: 1.6;
 }
 .page-content {
     text-align: center;
@@ -8,6 +9,7 @@ body {
 .blog-content ul, ol,
 .page-content ul, ol {
     padding-left: 40px;
+    margin-bottom: 10px;
 }
 
 .blog-content li, .page-content li {
@@ -38,4 +40,29 @@ body {
 }
 .sponsor-homepage-thumbnail img {
   margin: 0 auto;
+}
+
+p {margin-bottom: 22px;}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.1;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.page-content h2 {
+  margin-top: 100px;
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+  margin: 10px 0;
+}
+
+.page-content li, .blog-content li {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 20px;
 }

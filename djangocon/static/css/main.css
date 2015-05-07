@@ -30,7 +30,7 @@ body {
   font-style: normal;
   color:#333;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 25px;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
 }
@@ -44,9 +44,20 @@ h1, h2, h3, h4 {
     font-family: 'BrandonPrinted-Two';
     text-align: center;
 }
+h2, .h2 {
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  margin: 25px 0;
+  line-height: 25px;
+}
+
 a {
     color: #009ee3;
 }
+
+p {margin-bottom: 25px;}
 
 p a {
   text-decoration: underline;
@@ -191,11 +202,12 @@ input[type="text"], textarea  {
   font-weight: 300;
   list-style-position: inside;
   padding-left: 0;
+  margin-bottom: 29px;
 }
 
 .page-content li, .blog-content li {
   list-style: none;
-  margin-bottom: 20px;
+  margin: 12.5px 0;
 }
 
 .page-content li a, .blog-content li a {
@@ -209,7 +221,7 @@ input[type="text"], textarea  {
 }
 
 .page-content h2 {
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 h4 {
@@ -249,7 +261,6 @@ h2 {
     margin: 0 auto;
 }
 
-p {margin-bottom: 22px;}
 
 p a {
     color:inherit;
