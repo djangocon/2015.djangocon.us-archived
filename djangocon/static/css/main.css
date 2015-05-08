@@ -738,22 +738,22 @@ a.anchor {
   font-family: 'BrandonPrinted-Extras';
   content: '%';
   color:#fff;
-  font-size: 105px;
+  font-size: 98px;
   position: absolute;
   color: #fff;
-  top: -61px;
-  left: -124px;
+  top: -2px;
+  left: -116px;
   z-index: 0;
 }
 
 .newsdate:after {
   font-family: 'BrandonPrinted-Extras';
   content: '%';
-  font-size: 105px;
+  font-size: 98px;
   position: absolute;
   color: #fff;
-  top: -61px;
-  right: -124px;
+  top: -2px;
+  right: -116px;
   z-index: 0;
 }
 
