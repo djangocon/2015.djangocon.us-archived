@@ -1303,6 +1303,11 @@ th {
   border-radius: 0px 8px 0 0;
 }
 
+.table-striped>tbody>tr>td,
+.table-striped>tbody>tr>th {
+  color: #333;
+}
+
 .calendar td .start-time {
   font-size: 20px;
   font-weight: 300;
