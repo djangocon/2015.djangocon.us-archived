@@ -339,7 +339,9 @@ legend {color:#fff;}
   transform: rotate(0deg);
   z-index: 1030;
 }
-
+.caret {
+  line-height: 25px;
+}
 a.anchor {
   /* don't allow named anchors to get covered up by menubar */
   display: block;
