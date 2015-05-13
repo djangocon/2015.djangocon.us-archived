@@ -42,6 +42,14 @@ body {
   margin: 0 auto;
 }
 
+.sponsorship-level:before {
+  top: -60px;
+}
+
+.sponsorship-level:after {
+  top: -60px;
+}
+
 p {margin-bottom: 22px;}
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
