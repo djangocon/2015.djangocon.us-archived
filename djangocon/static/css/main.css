@@ -270,6 +270,7 @@ p a:hover {color:inherit;}
 hr {
   border: 0px solid;
   height: 60px;
+  line-height: 50px
 }
 
 hr:before {
