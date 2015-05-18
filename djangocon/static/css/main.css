@@ -177,7 +177,7 @@ input[type="text"], textarea  {
   border: none;
 }
 
-.blog-content p, .page-content p {
+.blog-content p, .page-content p, .tab-content {
   font-family: 'BrandonText-Medium';
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
