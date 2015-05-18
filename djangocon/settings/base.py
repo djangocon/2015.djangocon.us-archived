@@ -228,6 +228,8 @@ MARKITUP_SKIN = "markitup/skins/simple"
 
 CONFERENCE_ID = 1
 
+SYMPOSION_VOTE_THRESHOLD = 4
+
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
 PROPOSAL_FORMS = {
