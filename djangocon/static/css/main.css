@@ -177,7 +177,7 @@ input[type="text"], textarea  {
   border: none;
 }
 
-.blog-content p, .page-content p {
+.blog-content p, .page-content p, .tab-content {
   font-family: 'BrandonText-Medium';
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -1226,7 +1226,6 @@ a.anchor {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'BrandonPrinted-Extras';
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1310,6 +1309,11 @@ th {
   border: none;
   padding:15px;
   border-radius: 0px 8px 0 0;
+}
+
+.table-striped>tbody>tr>td,
+.table-striped>tbody>tr>th {
+  color: #333;
 }
 
 .calendar td .start-time {
