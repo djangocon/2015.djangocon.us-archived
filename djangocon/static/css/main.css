@@ -177,7 +177,7 @@ input[type="text"], textarea  {
   border: none;
 }
 
-.blog-content p, .page-content p, .tab-content {
+.blog-content p, .page-content p {
   font-family: 'BrandonText-Medium';
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -270,13 +270,20 @@ p a:hover {color:inherit;}
 hr {
   border: 0px solid;
   height: 60px;
-  line-height: 50px
+  line-height: 50px;
+  text-align: center;
 }
 
 hr:before {
   content: 'm';
   font-family: 'BrandonPrinted-Extras';
-  font-size: 100px;
+  font-size: 64px;
+}
+
+@media (min-width: 600px) {
+  hr:before {
+    font-size: 100px;
+  }
 }
 
 .sponsor-detail a {color: inherit;}
@@ -1219,6 +1226,7 @@ a.anchor {
   position: relative;
   top: 1px;
   display: inline-block;
+  font-family: 'BrandonPrinted-Extras';
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1302,11 +1310,6 @@ th {
   border: none;
   padding:15px;
   border-radius: 0px 8px 0 0;
-}
-
-.table-striped>tbody>tr>td,
-.table-striped>tbody>tr>th {
-  color: #333;
 }
 
 .calendar td .start-time {
