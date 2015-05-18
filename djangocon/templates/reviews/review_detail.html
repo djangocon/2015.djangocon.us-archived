@@ -178,16 +178,23 @@
 {% endblock %}
 
 {% block extra_script %}
-    <script src="//cdn.jsdelivr.net/jquery.history/0.1/jquery.history.js"></script>
+    <script src="//cdn.jsdelivr.net/history.js/1.7.1/history.js"></script>
+    <script src="//cdn.jsdelivr.net/history.js/1.7.1/history.html4.js"></script>
+    <script src="//cdn.jsdelivr.net/history.js/1.7.1/history.adapter.jquery.js"></script>
     <script type="text/javascript">
         $(function() {
-            var History = window.History;
+            History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+                var State = History.getState(); // Note: We are using History.getState() instead of event.state
+            });
 
+            if (History.getHash()) {
+                $(".nav-tabs a[href='" + location.hash + "']").click();
+            }
             $(window).bind("anchorchange", function() {
                 $(".nav-tabs a[href='" + location.hash + "']").click();
             });
 
-            $('#.nav-tabs a[data-toggle="tab"]').on('shown', function (e) {
+            $('.nav-tabs a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 if (History.enabled) {
                     History.pushState(null, null, $(e.target).attr("href"));
                 }
