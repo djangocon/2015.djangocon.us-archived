@@ -1,5 +1,7 @@
 {% extends "reviews/base.html" %}
 
+{% block head_title %}{{ key }} | {{ section_slug }}{% endblock head_title %}
+
 {% block reviews %}
     <h1>Voting Status ({{ section_slug }})</h1>
 
