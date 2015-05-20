@@ -228,7 +228,8 @@ MARKITUP_SKIN = "markitup/skins/simple"
 
 CONFERENCE_ID = 1
 
-SYMPOSION_VOTE_THRESHOLD = 4
+# adjust for number of reviews currenly about 1/5 (default: 3)
+SYMPOSION_VOTE_THRESHOLD = 5
 
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
