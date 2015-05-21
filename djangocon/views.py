@@ -8,6 +8,7 @@ from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from symposion.proposals.models import ProposalBase
+from symposion.reviews.models import ProposalResult
 from symposion.reviews.views import access_not_permitted
 from symposion.schedule.models import Slot
 
@@ -54,6 +55,11 @@ def proposal_export(request):
 
     proposals = ProposalBase.objects.all().select_subclasses().order_by('id')
     for proposal in proposals:
+        try:
+            proposal.result
+        except ProposalResult.DoesNotExist:
+            ProposalResult.objects.get_or_create(proposal=proposal)
+
         writer.writerow([
             proposal.id,
             proposal._meta.module_name,
