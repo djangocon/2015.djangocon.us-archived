@@ -1,10 +1,14 @@
-from datetime import datetime
 import json
+import unicodecsv
 
-from django.core.urlresolvers import reverse
+from datetime import datetime
+from django.contrib.auth.decorators import login_required
+from django.contrib.sites.models import get_current_site
 from django.contrib.sites.models import Site
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse
-
+from symposion.proposals.models import ProposalBase
+from symposion.reviews.views import access_not_permitted
 from symposion.schedule.models import Slot
 
 
@@ -19,6 +23,54 @@ def duration(start, end):
     end_dt = datetime.strptime(end.isoformat(), "%H:%M:%S")
     delta = end_dt - start_dt
     return delta.seconds // 60
+
+
+@login_required
+def proposal_export(request):
+    if not request.user.is_superuser:
+        return access_not_permitted(request)
+
+    content_type = 'text/csv'
+    response = HttpResponse(content_type=content_type)
+    response['Content-Disposition'] = 'attachment; filename="proposal_export.csv"'
+
+    domain = get_current_site(request).domain
+    writer = unicodecsv.writer(response, quoting=unicodecsv.QUOTE_ALL)
+    writer.writerow([
+        'id',
+        'proposal_type',
+        'speaker',
+        'title',
+        'audience_level',
+        'kind',
+        'recording_release',
+        'comment_count',
+        'plus_one',
+        'plus_zero',
+        'minus_zero',
+        'minus_one',
+        'review_detail'
+    ])
+
+    proposals = ProposalBase.objects.all().select_subclasses().order_by('id')
+    for proposal in proposals:
+        writer.writerow([
+            proposal.id,
+            proposal._meta.module_name,
+            proposal.speaker,
+            proposal.title,
+            proposal.audience_level,
+            proposal.kind,
+            proposal.recording_release,
+            proposal.result.comment_count,
+            proposal.result.plus_one,
+            proposal.result.plus_zero,
+            proposal.result.minus_zero,
+            proposal.result.minus_one,
+            'https://{0}{1}'.format(domain, reverse('review_detail',
+                                                    args=[proposal.pk])),
+        ])
+    return response
 
 
 def schedule_json(request):
@@ -69,7 +121,7 @@ def schedule_json(request):
         else:
             continue
         data.append(slot_data)
-    
+
     return HttpResponse(
         json.dumps(data, default=json_serializer),
         content_type="application/json"
