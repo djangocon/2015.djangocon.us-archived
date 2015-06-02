@@ -7,7 +7,7 @@
 </div>
 
 <div class="container">
-
+  <div class="sponsor-row">
   {% for sponsor in sponsor.list %}
   <div class="col-md-3 col-sm-3 col-xs-6 sponsorship-detail bronze">
     <a class="anchor" id="{{ sponsor.name|slugify }}"></a>
@@ -18,6 +18,11 @@
     </a>
     <h3><a href="{{ sponsor.external_url }}">{{ sponsor.name }}</a></h3>
   </div>
-  {% endfor %}
 
+  {% if forloop.counter|divisibleby:"4" and not forloop.last %}
+      </div>
+      <div class="sponsor-row">
+  {% endif %}
+  {% endfor %}
+  </div>
 </div>
