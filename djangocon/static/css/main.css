@@ -926,11 +926,15 @@ a.anchor {
 }
 .sponsorship-detail {
   display: block;
-  min-height: auto;
+
+}
+
+.sponsor-row {
+  clear:both;
 }
 
 .sponsorship-detail.silver, .sponsorship-detail.bronze  {
-  min-height: 280px;
+  /*min-height: 280px;*/
 }
 
 .sponsors-section h3 a {
@@ -991,7 +995,7 @@ a.anchor {
 
 @media (min-width: 768px) and (max-width: 991px) {
   .sponsorship-detail {
-    min-height: 640px;
+    /*min-height: 640px;*/
   }
   .diamond .sponsor-thumbnail {
     height: 330px;
