@@ -228,6 +228,9 @@ MARKITUP_SKIN = "markitup/skins/simple"
 
 CONFERENCE_ID = 1
 
+# adjust for number of reviews currenly about 1/5 (default: 3)
+SYMPOSION_VOTE_THRESHOLD = 5
+
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
 PROPOSAL_FORMS = {
@@ -253,7 +256,7 @@ METRON_SETTINGS = {
 
 SESSION_COOKIE_NAME = "DJANGOCON2015"
 
-THEME_CONTACT_EMAIL = ''
+THEME_CONTACT_EMAIL = 'webteam@djangocon.us'
 SERVER_EMAIL = ''
 
 SOUTH_MIGRATION_MODULES = {

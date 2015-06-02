@@ -1,0 +1,81 @@
+body {
+  font-family: 'BrandonPrinted-Two';
+  line-height: 1.6;
+}
+.page-content {
+    text-align: center;
+}
+
+.blog-content ul, ol,
+.page-content ul, ol {
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+
+.blog-content li, .page-content li {
+  font-weight: 400;
+}
+
+.blog-content li:before, .page-content li:before {
+  left: -10px;
+}
+
+.sponsor-homepage-thumbnail {
+  height: 150px;
+  background: #fff;
+  border: 10px solid rgba(0, 158, 227, 0.86);
+  border-radius: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.sponsor-homepage-thumbnail img {
+  margin: 0 auto;
+}
+
+.sponsorship-level:before {
+  top: -60px;
+}
+
+.sponsorship-level:after {
+  top: -60px;
+}
+
+p {margin-bottom: 22px;}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.1;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.page-content h2 {
+  margin-top: 100px;
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+  margin: 10px 0;
+}
+
+.page-content li, .blog-content li {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+hr {
+  margin-top: -60px;
+  height: 90px;
+}

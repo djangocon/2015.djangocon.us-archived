@@ -25,12 +25,12 @@ html, body {
 .home div.small-header {display:none;}
 
 body {
-  font-family: 'BrandonPrinted-Two';
+  font-family: 'BrandonText-Medium';
   font-weight: normal;
   font-style: normal;
   color:#333;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 25px;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
 }
@@ -40,9 +40,24 @@ p, h1, h2, h3, span. a {
   backface-visibility: hidden;
 }
 
+h1, h2, h3, h4 {
+    font-family: 'BrandonPrinted-Two';
+    text-align: center;
+}
+h2, .h2 {
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  margin: 25px 0;
+  line-height: 25px;
+}
+
 a {
     color: #009ee3;
 }
+
+p {margin-bottom: 25px;}
 
 p a {
   text-decoration: underline;
@@ -58,6 +73,21 @@ input {
 }
 
 li {list-style: none}
+
+.blog-content li:before, .page-content li:before {
+  font-family: 'BrandonPrinted-Extras';
+  content: ">";
+  top: 5px;
+  font-size: 2em;
+  line-height: 20px;
+  margin-right: 10px;
+  position: relative;
+  font-weight: 400;
+}
+
+.blog-content li, .page-content li {
+  font-weight: 800;
+}
 
 input[type="text"], textarea  {
   font-family: 'BrandonText-Medium';
@@ -147,7 +177,7 @@ input[type="text"], textarea  {
   border: none;
 }
 
-.blog-content p, .page-content p {
+.blog-content p, .page-content p, .tab-content {
   font-family: 'BrandonText-Medium';
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -171,11 +201,13 @@ input[type="text"], textarea  {
 .page-content ul, ol {
   font-weight: 300;
   list-style-position: inside;
+  padding-left: 0;
+  margin-bottom: 29px;
 }
 
 .page-content li, .blog-content li {
   list-style: none;
-  margin-bottom: 20px;
+  margin: 12.5px 0;
 }
 
 .page-content li a, .blog-content li a {
@@ -183,22 +215,13 @@ input[type="text"], textarea  {
   color: #fff;
 }
 
-.blog-content li:before, .page-content li:before {
-  font-family: 'BrandonPrinted-Extras';
-  content: ">";
-  top: 5px;
-  font-size: 2em;
-  left: -10px;
-  line-height: 20px;
-  position: relative;
-}
 
 .page-content h3 {
   font-size:22px;
 }
 
 .page-content h2 {
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 h4 {
@@ -226,6 +249,12 @@ h2 {
   text-align: center;
 }
 
+.base-row .well {
+  color: #333;
+}
+.base-row small {
+  color: #ccc;
+}
 .sponsorships .base-row {
   background: #009ee3;
 }
@@ -235,7 +264,6 @@ h2 {
     margin: 0 auto;
 }
 
-p {margin-bottom: 22px;}
 
 p a {
     color:inherit;
@@ -244,14 +272,21 @@ p a:hover {color:inherit;}
 
 hr {
   border: 0px solid;
-  margin-top: -60px;
-  height: 90px;
+  height: 60px;
+  line-height: 50px;
+  text-align: center;
 }
 
 hr:before {
   content: 'm';
   font-family: 'BrandonPrinted-Extras';
-  font-size: 100px;
+  font-size: 64px;
+}
+
+@media (min-width: 600px) {
+  hr:before {
+    font-size: 100px;
+  }
 }
 
 .sponsor-detail a {color: inherit;}
@@ -314,7 +349,9 @@ legend {color:#fff;}
   transform: rotate(0deg);
   z-index: 1030;
 }
-
+.caret {
+  line-height: 25px;
+}
 a.anchor {
   /* don't allow named anchors to get covered up by menubar */
   display: block;
@@ -330,6 +367,7 @@ a.anchor {
 .page-content {
   margin-bottom: 40px;
   margin-top: 15px;
+  text-align: left;
 }
 
 .navbar-brand {
@@ -715,7 +753,7 @@ a.anchor {
   font-size: 105px;
   position: absolute;
   color: #fff;
-  top: -61px;
+  top: 8px;
   left: -124px;
   z-index: 0;
 }
@@ -726,7 +764,7 @@ a.anchor {
   font-size: 105px;
   position: absolute;
   color: #fff;
-  top: -61px;
+  top: 8px;
   right: -124px;
   z-index: 0;
 }
@@ -833,6 +871,7 @@ a.anchor {
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 60px;
+  font-family: 'BrandonPrinted-Two';
 }
 
 .sponsorship-level:before {
@@ -842,7 +881,7 @@ a.anchor {
   font-size: 105px;
   position: absolute;
   color: #fff;
-  top: -60px;
+  top: 8px;
   left: -124px;
   z-index: 0;
 }
@@ -853,7 +892,7 @@ a.anchor {
   font-size: 105px;
   position: absolute;
   color: #fff;
-  top: -60px;
+  top: 8px;
   right: -124px;
   z-index: 0;
 }
@@ -877,9 +916,9 @@ a.anchor {
   content: 'W';
   position:absolute;
   font-family: 'BrandonPrinted-Extras';
-  left: 49%;
+  left: 47%;
   height:50px;
-  top:-45px;
+  top:-50px;
 }
 
 .sponsors-section h1 a {
@@ -941,28 +980,7 @@ a.anchor {
 .sponsor-thumbnail img {
   margin: 0 auto;
 }
-.sponsor-homepage-thumbnail {
-  height: 150px;
-  background: #fff;
-  border: 10px solid rgba(0, 158, 227, 0.86);
-  border-radius: 300px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
 
-.sponsor-homepage-thumbnail img {
-  margin: 0 auto;
-}
 
 .diamond .sponsor-thumbnail {
 }
@@ -1214,7 +1232,6 @@ a.anchor {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'BrandonPrinted-Extras';
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1298,6 +1315,11 @@ th {
   border: none;
   padding:15px;
   border-radius: 0px 8px 0 0;
+}
+
+.table-striped>tbody>tr>td,
+.table-striped>tbody>tr>th {
+  color: #333;
 }
 
 .calendar td .start-time {

@@ -19,8 +19,11 @@ if 'comps' in settings.INSTALLED_APPS:
 urlpatterns += patterns(
     '',
     url(r'^$',
-        TemplateView.as_view(template_name='homepage.html'),
-        name='home'),
+        TemplateView.as_view(template_name='homepage.html'), name='home'),
+
+    url(r'^404/$',
+        TemplateView.as_view(template_name='404.html'), name='phor-oh-phor'),
+
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^account/signup/$', symposion.views.SignupView.as_view(), name='account_signup'),
@@ -33,12 +36,15 @@ urlpatterns += patterns(
     url(r'^dashboard/', symposion.views.dashboard, name='dashboard'),
     url(r'^speaker/', include('symposion.speakers.urls')),
     url(r'^proposals/', include('symposion.proposals.urls')),
+    url(r'^proposals/export/', djangocon.views.proposal_export,
+        name='proposal_export'),
     url(r'^sponsors/', include('symposion.sponsorship.urls')),
     url(r'^boxes/', include('symposion.boxes.urls')),
     url(r'^teams/', include('symposion.teams.urls')),
     url(r'^reviews/', include('symposion.reviews.urls')),
     url(r'^schedule/', include('symposion.schedule.urls')),
     url(r'^markitup/', include('markitup.urls')),
+
 
     url(r'^', include('symposion.cms.urls')),
 )
