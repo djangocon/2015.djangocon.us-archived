@@ -79,3 +79,95 @@ hr {
   margin-top: -60px;
   height: 90px;
 }
+
+.navbar-wrapper {
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -webkit-transform: rotate(3deg);
+  transform: rotate(3deg);
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -o-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.navbar-wrapper:hover {
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.navbar-brand {
+  margin-top: -30px;
+  -moz-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  -o-transform: rotate(-4deg);
+  -webkit-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+}
+
+.navbar-wrapper:hover .navbar-brand {
+  margin-top: -40px;
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+@media (max-width: 767px) {
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 10px;
+  }
+  .navbar-wrapper {
+    right: 0px;
+    left: 0px;
+    top: -140px;
+    height: 200px;
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  .navbar-brand {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -10px;
+  }
+
+  .navbar-wrapper:hover .navbar-brand {
+    margin-top: -10px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .navbar-wrapper {
+    left: -110px;
+    top: -200px;
+  }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .navbar-wrapper {
+      left: -110px;
+      top: -100px;
+    }
+  }
+}
+
+
+@media (min-width: 1300px) {
+  .poster-shadow {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    -webkit-transform: rotateZ(1deg);
+    transform: rotate(1deg);
+  }
+}
