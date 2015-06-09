@@ -255,6 +255,9 @@ h2 {
 .base-row small {
   color: #ccc;
 }
+.well small {
+  color: #333;
+}
 .sponsorships .base-row {
   background: #009ee3;
 }
