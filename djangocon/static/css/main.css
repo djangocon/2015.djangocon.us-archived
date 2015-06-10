@@ -203,6 +203,7 @@ input[type="text"], textarea  {
   list-style-position: inside;
   padding-left: 0;
   margin-bottom: 29px;
+  text-align: justify;
 }
 
 .page-content li, .blog-content li {
