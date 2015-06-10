@@ -10,7 +10,8 @@
 {% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="row base-row">
+<div class="page-content container">
     {% if presentation.slot %}
         <h4>
             {{ presentation.slot.day.date|date:"l" }}
@@ -36,6 +37,7 @@
     <h3>Abstract</h3>
 
     <div class="abstract">{{ presentation.abstract|safe }}</div>
+</div>
 </div>
 {% endblock %}
 
