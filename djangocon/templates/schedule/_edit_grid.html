@@ -15,14 +15,14 @@
                       {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
                         <a class="edit-slot" href="#"
                            data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
-                          <i class="fa {% if not slot.content %}fa-plus-circle{% else %}fa-edit{% endif %}"></i>
+                          <i class="glyphicon {% if not slot.content %}glyphicon-plus-sign{% else %}glyphicon-edit{% endif %}"></i>
                         </a>
                         <p class="title">{{ slot.content.title }}</p>
                         <p class="speaker">{{ slot.content.speakers|join:", " }}</p>
                       {% else %}
                         <a class="edit-slot" href="#"
                            data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
-                          <i class="fa fa-edit"></i>
+                          <i class="glyphicon glyphicon-edit"></i>
                         </a>
                         {% if slot.content_override.raw %}
                           {{ slot.content_override.rendered|safe }}
