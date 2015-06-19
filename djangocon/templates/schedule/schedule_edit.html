@@ -39,19 +39,17 @@
 
 {% block body %}
 <div class="row base-row">
-<div class="container">
-  <div class="row">
   {% for timetable in days %}
     {% include "schedule/_edit_grid.html" %}
   {% endfor %}
-  </div>
+</div>
 
+<div class="row base-row">
   <form id="schedule-builder" action="." method="post" enctype="multipart/form-data">{% csrf_token %}
       {{ form.as_p }}
       <input type="submit" name="submit" value="Submit" />
       <input type="submit" id="delete" name="delete" value="Delete Schedule" />
   </form>
   <div class="modal-markItUp modal fade" id="slotEditModal"></div>
-</div>
 </div>
 {% endblock body %}
