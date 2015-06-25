@@ -74,6 +74,10 @@ input {
 
 li {list-style: none}
 
+.navbar {
+  font-family: 'BrandonPrinted-Two';
+}
+
 .blog-content li:before, .page-content li:before {
   font-family: 'BrandonPrinted-Extras';
   content: ">";
