@@ -180,6 +180,7 @@ INSTALLED_APPS = [
     "symposion.schedule",
 
     # project
+    "djangocon.core",
     "djangocon.proposals",
 ]
 
