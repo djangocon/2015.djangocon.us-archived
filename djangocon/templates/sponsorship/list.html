@@ -27,9 +27,11 @@
     {% regroup all_sponsors by level as sponsors_list %}
 
     {% for sponsor in sponsors_list%}
-
-      {% with "sponsorship/includes/level_"|addstr:sponsor.grouper|lower|addstr:".html" as template %}
-        {% include template %}
+      {% with sponsor.grouper|slugify as sponsor_template_name %}
+        {% with "sponsorship/includes/level_"|addstr:sponsor_template_name|lower|addstr:".html" as template %}
+          template_name: {{template}}
+          {% include template %}
+        {% endwith %}
       {% endwith %}
 
     {% endfor %}
