@@ -1,4 +1,5 @@
 {% load thumbnail %}
+{% load core_tags %}
 
 <div class="container">
   <div class="col-md-12 col-centered sponsorship-level-wrapper">
@@ -18,7 +19,7 @@
       </a>
       <h3><a href="{{ sponsor.external_url }}">{{ sponsor.name }}</a></h3>
       {% if sponsor.listing_text %}
-        <p>{{ sponsor.listing_text|urlize }}</p>
+        {{ sponsor.listing_text|markdown }}
       {% endif %}
     </div>
 
