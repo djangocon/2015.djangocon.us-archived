@@ -894,7 +894,9 @@ a.anchor {
   clear:both;
 }
 
-.sponsorship-detail.silver, .sponsorship-detail.bronze  {
+.sponsorship-detail.bronze, .sponsorship-detail.community,
+.sponsorship-detail.diversity .sponsorship-detail.mobile-app,
+.sponsorship-detail.silver {
   /*min-height: 280px;*/
 }
 
@@ -950,7 +952,9 @@ a.anchor {
 .diamond .sponsor-thumbnail {
 }
 
-.gold .sponsor-thumbnail, .silver .sponsor-thumbnail, .bronze .sponsor-thumbnail {
+.bronze .sponsor-thumbnail, .community .sponsor-thumbnail,
+.diversity .sponsor-thumbnail, .gold .sponsor-thumbnail,
+.mobile-app .sponsor-thumbnail, .silver .sponsor-thumbnail {
   height: 190px;
 }
 
@@ -966,7 +970,9 @@ a.anchor {
     height: 210px;
   }
 
-  .gold .sponsor-thumbnail, .silver .sponsor-thumbnail, .bronze .sponsor-thumbnail {
+  .bronze .sponsor-thumbnail, .community .sponsor-thumbnail,
+  .diversity .sponsor-thumbnail, .gold .sponsor-thumbnail,
+  .mobile-app .sponsor-thumbnail, .silver .sponsor-thumbnail {
     height: 150px;
   }
 }
