@@ -1305,6 +1305,7 @@ th {
 .calendar td .speaker {
   font-size: 14px;
   font-weight: 600;
+  margin-bottom: 0;
 }
 
 .calendar td .track {

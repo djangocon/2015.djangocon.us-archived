@@ -3,19 +3,23 @@
 {% load boxes_tags %}
 {% regroup timetable.slots_qs by start as slots %}
 
-<div class="col-md-4 schedule">
+<div class="schedule">
         <table class="calendar table">
             <thead>
                 <tr>
-                    <th>{{ timetable.day.date|date:"l, F jS" }}</th>
+                    <th colspan="2">{{ timetable.day.date|date:"l, F jS" }}</th>
                 </tr>
             </thead>
             <tbody>
             {% for slot_group in slots %}
                 <tr class="{% cycle 'odd' 'even' %}">
-                    <td>
+                    <td colspan="2">
                         <p class="start-time">{{ slot_group.grouper|time:"h:iA"}}</p>
+                    </td>
+                </tr>
+                <tr class="{% cycle 'odd' 'even' %}">
                         {% for slot in slot_group.list %}
+                    <td class="{% for room in slot.rooms %}{{ room.name|slugify}} {% endfor %}" {% if slot_group.list|length == 1 %}colspan="2"{% endif %}>
                             {% if slot.content %}
                                 <p class="start-time"><a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a></p>
                                 <p class="speaker">{{ slot.content.speakers|join:", " }}</p>
@@ -37,8 +41,9 @@
                               {% endif %}
                             </p>
                             {% endif %}
-                        {% endfor %}
+
                     </td>
+                        {% endfor %}
                 </tr>
             {% endfor %}
             </tbody>
