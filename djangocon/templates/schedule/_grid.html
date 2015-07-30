@@ -1,6 +1,6 @@
-
 {% load url from future %}
 {% load boxes_tags %}
+{% load core_tags %}
 {% regroup timetable.slots_qs by start as slots %}
 
 <div class="schedule">
@@ -18,7 +18,8 @@
                     </td>
                 </tr>
                 <tr class="{% cycle 'odd' 'even' %}">
-                        {% for slot in slot_group.list %}
+                        {{slot_group }}
+                        {% for slot in slot_group.list|sort_by_m2m:"rooms.name" %}
                     <td class="{% for room in slot.rooms %}{{ room.name|slugify}} {% endfor %}" {% if slot_group.list|length == 1 %}colspan="2"{% endif %}>
                             {% if slot.content %}
                                 <p class="start-time"><a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a></p>
