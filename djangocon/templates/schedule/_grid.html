@@ -18,9 +18,8 @@
                     </td>
                 </tr>
                 <tr class="{% cycle 'odd' 'even' %}">
-                        {{slot_group }}
-                        {% for slot in slot_group.list|sort_by_m2m:"rooms.name" %}
-                    <td class="{% for room in slot.rooms %}{{ room.name|slugify}} {% endfor %}" {% if slot_group.list|length == 1 %}colspan="2"{% endif %}>
+                    {% for slot in slot_group.list|sort_by_m2m:"rooms.name" %}
+                        <td class="{% for room in slot.rooms %}{{ room.name|slugify}} {% endfor %}" {% if slot_group.list|length == 1 %}colspan="2"{% endif %}>
                             {% if slot.content %}
                                 <p class="start-time"><a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a></p>
                                 <p class="speaker">{{ slot.content.speakers|join:", " }}</p>
@@ -43,8 +42,8 @@
                             </p>
                             {% endif %}
 
-                    </td>
-                        {% endfor %}
+                        </td>
+                    {% endfor %}
                 </tr>
             {% endfor %}
             </tbody>
