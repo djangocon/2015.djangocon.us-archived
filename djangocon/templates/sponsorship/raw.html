@@ -4,11 +4,14 @@
 {% sponsors as all_sponsors %}
 {% regroup all_sponsors by level as sponsors_list %}
 
-<h1>Sponsor block (plain)</h1>
+<h1>Sponsor blocks</h1>
+
+<h2>Plain</h2>
+
 <div>
 {% for sponsor in sponsors_list %}
 <p>
-  <strong>{{ sponsor.grouper }} Level:</strong>
+  <strong>{{ sponsor.grouper }}:</strong>
   {% for sponsor in sponsor.list %}
   <span>
     {% if not forloop.first %} | {% endif %}
@@ -23,11 +26,22 @@
 
 <hr>
 
-<h1>Sponsor block table (rich / logo)</h1>
+<h2>Markdown</h2>
+
+<xmp>
+{% for sponsor in sponsors_list %}
+**{{ sponsor.grouper }}:** {% for sponsor in sponsor.list %}{% if not forloop.first %} | {% endif %}[{{ sponsor }}]({{ sponsor.external_url }}){% endfor %}
+{% endfor %}
+</xmp>
+
+
+<hr>
+
+<h2>Table (rich / logo)</h2>
 
 <div>
 {% for sponsor in sponsors_list%}
-  <h1>{{ sponsor.grouper }}</h1>
+  <h3>{{ sponsor.grouper }}</h3>
   <table>
     <tbody>
       <tr>
@@ -52,7 +66,7 @@
 
 <hr>
 
-<h1>Sponsor block list (rich / logo)</h1>
+<h2>List (rich / logo)</h2>
 
 <div>
 {% for sponsor in sponsors_list%}
