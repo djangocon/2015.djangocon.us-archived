@@ -39,6 +39,8 @@ urlpatterns += patterns(
     url(r'^proposals/export/', djangocon.views.proposal_export,
         name='proposal_export'),
     url(r'^sponsors/', include('symposion.sponsorship.urls')),
+    url(r'^sponsors/raw/$',
+        TemplateView.as_view(template_name='sponsorship/raw.html'), name='sponsors_raw'),
     url(r'^boxes/', include('symposion.boxes.urls')),
     url(r'^teams/', include('symposion.teams.urls')),
     url(r'^reviews/', include('symposion.reviews.urls')),
