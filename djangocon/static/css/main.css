@@ -74,6 +74,10 @@ input {
 
 li {list-style: none}
 
+.navbar {
+  font-family: 'BrandonPrinted-Two';
+}
+
 .blog-content li:before, .page-content li:before {
   font-family: 'BrandonPrinted-Extras';
   content: ">";
@@ -443,7 +447,7 @@ a.anchor {
 .navbar-default .navbar-nav li a {
   color:#EE5A28;
   padding-top:14px;
-  padding-right: 24px;
+  padding-right: 10px;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
