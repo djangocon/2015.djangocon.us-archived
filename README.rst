@@ -85,17 +85,21 @@ Change the permissions on the file::
 
     chmod 600 ~/.gondor
 
-To deploy the develop branch to the staging instance::
+To deploy the develop branch to the staging instance using invoke::
 
-    gondor deploy develop develop
+    invoke deploy_develop
 
-To deploy the master branch to the production instance::
+To deploy the master branch to the production instance using invoke::
 
-    gondor deploy primary master
+    invoke deploy_production
 
 To copy the production instance database to the develop instance::
 
-    gondor manage develop database:copy primary
+    invoke update_develop_db
+
+To copy the production instance database to your local database::
+
+    invoke update_local_db
 
 
 To run tests
