@@ -2,8 +2,13 @@ from invoke import run, task
 
 
 @task
-def deploy_develop():
+def deploy_develop_to_develop():
     run('gondor deploy develop develop')
+
+
+@task
+def deploy_master_to_develop():
+    run('gondor deploy develop master')
 
 
 @task
