@@ -190,6 +190,10 @@ OPBEAT = {
     "SECRET_TOKEN": os.environ.get("OPBEAT_SECRET_TOKEN")
 }
 
+EB_APP_KEY = os.environ.get('EB_APP_KEY')
+EB_EVENT_ID = os.environ.get('EB_EVENT_ID')
+EB_USER_KEY = os.environ.get('EB_USER_KEY')
+
 FIXTURE_DIRS = [
     os.path.join(PROJECT_ROOT, "fixtures"),
 ]
@@ -253,7 +257,6 @@ METRON_SETTINGS = {
         3: os.environ.get("MIXPANEL_API_TOKEN"),
     }
 }
-
 
 SESSION_COOKIE_NAME = "DJANGOCON2015"
 
