@@ -39,3 +39,6 @@ django-waffle==0.10.1
 pinax-theme-bootstrap==5.1.0
 django-forms-bootstrap==3.0.0
 django-bootstrap-form==3.1
+
+# Added as part of the "lost levels"
+eventbrite==3.2.1
