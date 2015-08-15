@@ -93,6 +93,11 @@ To deploy the master branch to the production instance::
 
     gondor deploy primary master
 
+To copy the production instance database to the develop instance::
+
+    gondor manage develop database:copy primary
+
+
 To run tests
 ------------
 
