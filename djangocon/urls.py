@@ -41,6 +41,13 @@ urlpatterns += patterns(
     url(r'^sponsors/', include('symposion.sponsorship.urls')),
     url(r'^sponsors/raw/$',
         TemplateView.as_view(template_name='sponsorship/raw.html'), name='sponsors_raw'),
+
+    url(r'^sponsors/guide/$',
+        TemplateView.as_view(template_name='sponsorship/guide.html'), name='sponsors_guide'),
+
+    url(r'^sponsors/sponsor_file\.zip$', djangocon.views.export_sponsors,
+        name='export_sponsors'),
+
     url(r'^boxes/', include('symposion.boxes.urls')),
     url(r'^teams/', include('symposion.teams.urls')),
     url(r'^reviews/', include('symposion.reviews.urls')),

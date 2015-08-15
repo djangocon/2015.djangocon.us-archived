@@ -1,4 +1,6 @@
 import json
+import os
+import StringIO
 import unicodecsv
 
 from datetime import datetime
@@ -6,11 +8,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.sites.models import get_current_site
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from symposion.proposals.models import ProposalBase
 from symposion.reviews.models import ProposalResult
 from symposion.reviews.views import access_not_permitted
 from symposion.schedule.models import Slot
+from symposion.sponsorship.models import Sponsor
+from zipfile import ZipFile, ZIP_DEFLATED
 
 
 def json_serializer(obj):
@@ -134,3 +138,50 @@ def schedule_json(request):
         json.dumps(data, default=json_serializer),
         content_type="application/json"
     )
+
+
+# with print logos and json reformat
+@login_required
+def export_sponsors(request):
+    if not request.user.is_staff:
+        raise Http404()
+
+    # use StringIO to make zip in memory, rather than on disk
+    f = StringIO.StringIO()
+    z = ZipFile(f, 'w', ZIP_DEFLATED)
+    data = []
+
+    # collect the data and write web and print logo assets for each sponsor
+    for sponsor in Sponsor.objects.all():
+        data.append({
+            'name': sponsor.name,
+            'website': sponsor.external_url,
+            'description': sponsor.listing_text,
+            'contact name': sponsor.contact_name,
+            'contact email': sponsor.contact_email,
+            'level': str(sponsor.level),
+        })
+        if sponsor.website_logo:
+            path = sponsor.website_logo.path
+            z.write(path, '{0}_weblogo{1}'.format(
+                str(sponsor.name).replace(' ', ''),
+                os.path.splitext(path)[1]))
+        if sponsor.print_logo:
+            path = sponsor.print_logo.path
+            z.write(path, '{0}_printlogo{1}'.format(
+                str(sponsor.name).replace(' ', ''),
+                os.path.splitext(path)[1]))
+
+    # write sponsor data to text file for zip
+    with open('sponsor_data.txt', 'wb') as d:
+        json.dump(data, d, encoding='utf-8', indent=4)
+    z.write('sponsor_data.txt')
+
+    z.close()
+
+    response = HttpResponse(mimetype='application/zip')
+    response['Content-Disposition'] = 'attachment; filename=sponsor_file.zip'
+    f.seek(0)
+    response.write(f.getvalue())
+    f.close()
+    return response
