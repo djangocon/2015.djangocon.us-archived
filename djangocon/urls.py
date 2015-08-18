@@ -31,6 +31,8 @@ urlpatterns += patterns(
     url(r'^account/', include('account.urls')),
     url(r'^contact/', include('contact_form.urls')),
     url(r'^schedule/json/$', djangocon.views.schedule_json, name='schedule_json'),
+    url(r'^schedule/guidebook/$', djangocon.views.schedule_guidebook,
+        name='schedule_guidebook'),
 
     url(r'^blog/', include('biblion.urls')),
     url(r'^dashboard/', symposion.views.dashboard, name='dashboard'),

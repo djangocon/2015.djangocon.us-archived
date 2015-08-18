@@ -1,6 +1,5 @@
 import json
-import os
-import StringIO
+import tablib
 import unicodecsv
 
 from datetime import datetime
@@ -8,13 +7,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.sites.models import get_current_site
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
-from django.http import Http404, HttpResponse
+from django.http import HttpResponse
 from symposion.proposals.models import ProposalBase
 from symposion.reviews.models import ProposalResult
 from symposion.reviews.views import access_not_permitted
 from symposion.schedule.models import Slot
-from symposion.sponsorship.models import Sponsor
-from zipfile import ZipFile, ZIP_DEFLATED
+from unidecode import unidecode
 
 
 def json_serializer(obj):
@@ -138,3 +136,57 @@ def schedule_json(request):
         json.dumps(data, default=json_serializer),
         content_type="application/json"
     )
+
+
+@login_required
+def schedule_guidebook(request):
+    headers = (
+        'Session Title',
+        'Date',
+        'Time Start',
+        'Time End',
+        'Room/Location',
+        'Schedule Track (Optional)',
+        'Description (Optional)'
+    )
+
+    slots = Slot.objects.all().order_by('start')
+    data = []
+    for slot in slots:
+        # authors = slot.content.speakers() if hasattr(slot.content, 'speakers') else []
+
+        if slot.content_override:
+            name = slot.content_override.raw
+        else:
+            name = slot.content.title if hasattr(slot.content, 'title') else ''
+
+        description = slot.content.description.raw if hasattr(slot.content, 'description') else ''
+        description = unidecode(description)
+        description = description.replace('\r', '')
+        description = description.replace('\n', '<br>')
+        room_location = ', '.join(room['name'] for room in slot.rooms.values())
+        track = slot.content.proposal.get_audience_level_display() if hasattr(slot.content, 'proposal') else ''
+
+        if track == 'Not Applicable':
+            track = 'N/A'
+
+        slot_data = [
+            name,
+            slot.day.date.isoformat(),
+            slot.start.isoformat(),
+            slot.end.isoformat(),
+            room_location,
+            track,
+            description,
+        ]
+
+        data.append(slot_data)
+
+    data = tablib.Dataset(*data, headers=headers)
+
+    response = HttpResponse(
+        data.xlsx,
+        content_type='application/vnd.ms-excel'
+    )
+    response['Content-Disposition'] = 'attachment; filename="guidebook_schedule.xls"'
+    return response

@@ -42,3 +42,7 @@ django-bootstrap-form==3.1
 
 # Added as part of the "lost levels"
 eventbrite==3.2.1
+
+# Added for Guidebook export
+tablib==0.10.0
+unidecode==0.4.18
