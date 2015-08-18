@@ -22,6 +22,9 @@
                         <td class="{% for room in slot.rooms %}{{ room.name|slugify}} {% endfor %}" {% if slot_group.list|length == 1 %}colspan="2"{% endif %}>
                             {% if slot.content %}
                                 <p class="start-time"><a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a></p>
+                                {% if slot.content.proposal.audience_level != 4 %}
+                                    <p class="audience_level">({{ slot.content.proposal.get_audience_level_display }} Level)</p>
+                                {% endif %}
                                 <p class="speaker">{{ slot.content.speakers|join:", " }}</p>
                             {% else %}
                                 {% if slot.content_override.raw %}
