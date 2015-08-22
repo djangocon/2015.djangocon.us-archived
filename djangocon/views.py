@@ -283,7 +283,8 @@ def guidebook_news_feed(request):
     blog_url = 'http://%s%s' % (current_site.domain, reverse('blog'))
     # feed_url = 'http://%s%s' % (current_site.domain, reverse(url_name, kwargs=kwargs))
 
-    posts = Post.objects.published().order_by('-published')
+    posts = Post.objects.published().exclude(title__endswith='Sponsor')\
+        .order_by('-published')
 
     if posts:
         feed_updated = posts[0].updated
