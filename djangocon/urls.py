@@ -58,6 +58,9 @@ urlpatterns += patterns(
     url(r'^guidebook/sponsors/', djangocon.views.guidebook_sponsor_export,
         name='guidebook_sponsors'),
 
+    url(r'^guidebook/news/feed/', djangocon.views.guidebook_news_feed,
+        name='guidebook_news_feed'),
+
     url(r'^boxes/', include('symposion.boxes.urls')),
     url(r'^teams/', include('symposion.teams.urls')),
     url(r'^reviews/', include('symposion.reviews.urls')),

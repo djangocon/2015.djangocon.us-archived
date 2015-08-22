@@ -2,12 +2,14 @@ import json
 import tablib
 import unicodecsv
 
+from biblion.models import Post
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.models import get_current_site
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
+from django.template.loader import render_to_string
 from symposion.proposals.models import ProposalBase
 from symposion.reviews.models import ProposalResult
 from symposion.reviews.views import access_not_permitted
@@ -262,3 +264,41 @@ def guidebook_speaker_export(request):
         ])
 
     return response
+
+
+def guidebook_news_feed(request):
+    """
+    Sections are broken in the version of `biblion` that we are using so
+    lifting this form `pinax-blog` which is the successor.
+
+    https://github.com/pinax/pinax-blog/blob/master/pinax/blog/views.py#L146
+    """
+    current_site = Site.objects.get_current()
+
+    feed_title = 'DjangoCon US News Updates'
+    feed_description = 'The latest updates and additions for DjangoCon US.'
+    feed_mimetype = 'application/rss+xml'
+    feed_template = 'pinax/blog/rss_feed.xml'
+
+    blog_url = 'http://%s%s' % (current_site.domain, reverse('blog'))
+    # feed_url = 'http://%s%s' % (current_site.domain, reverse(url_name, kwargs=kwargs))
+
+    posts = Post.objects.published().order_by('-published')
+
+    if posts:
+        feed_updated = posts[0].updated
+    else:
+        feed_updated = datetime(2009, 8, 1, 0, 0, 0)
+
+    feed = render_to_string(feed_template, {
+        # 'feed_id': feed_url,
+        'feed_title': feed_title,
+        'feed_description': feed_description,
+        'blog_url': blog_url,
+        # 'feed_url': feed_url,
+        'feed_updated': feed_updated,
+        'entries': posts,
+        'current_site': current_site,
+    })
+
+    return HttpResponse(feed, content_type=feed_mimetype)
