@@ -211,7 +211,10 @@ def guidebook_sponsor_export(request):
             sponsor.level.name,
             sponsor.listing_text,
             '',
-            sponsor.website_logo
+            'https://{0}{1}'.format(
+                Site.objects.get_current().domain,
+                sponsor.website_logo.url
+            )
         ]
         data.append(sponsor_data)
 
