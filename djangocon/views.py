@@ -12,6 +12,7 @@ from symposion.proposals.models import ProposalBase
 from symposion.reviews.models import ProposalResult
 from symposion.reviews.views import access_not_permitted
 from symposion.schedule.models import Slot
+from symposion.sponsorship.models import Sponsor
 from unidecode import unidecode
 
 
@@ -189,4 +190,37 @@ def schedule_guidebook(request):
         content_type='application/vnd.ms-excel'
     )
     response['Content-Disposition'] = 'attachment; filename="guidebook_schedule.xls"'
+    return response
+
+
+@login_required
+def guidebook_sponsor_export(request):
+    headers = (
+        'Name',
+        'Sub-Title (i.e. Location, Table/Booth, or Title/Sponsorship Level)',
+        'Description (Optional)',
+        'Location/Room',
+        'Image (Optional)'
+    )
+    data = []
+
+    sponsors = Sponsor.objects.active()
+    for sponsor in sponsors:
+        sponsor_data = [
+            sponsor.name,
+            sponsor.level.name,
+            sponsor.listing_text,
+            '',
+            sponsor.website_logo
+        ]
+        data.append(sponsor_data)
+
+    data = tablib.Dataset(*data, headers=headers)
+
+    response = HttpResponse(
+        data.xls,
+        content_type='application/vnd.ms-excel'
+    )
+    response['Content-Disposition'] = 'attachment; filename="guidebook_sponsors.xls"'
+
     return response

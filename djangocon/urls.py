@@ -31,8 +31,6 @@ urlpatterns += patterns(
     url(r'^account/', include('account.urls')),
     url(r'^contact/', include('contact_form.urls')),
     url(r'^schedule/json/$', djangocon.views.schedule_json, name='schedule_json'),
-    url(r'^schedule/guidebook/$', djangocon.views.schedule_guidebook,
-        name='schedule_guidebook'),
 
     url(r'^blog/', include('biblion.urls')),
     url(r'^dashboard/', symposion.views.dashboard, name='dashboard'),
@@ -49,6 +47,13 @@ urlpatterns += patterns(
 
     url(r'^sponsors/sponsor_file\.zip$', 'djangocon.lost_levels.views.export_sponsors',
         name='export_sponsors'),
+
+    # Guidebook exports...
+    url(r'^guidebook/schedule/$', djangocon.views.schedule_guidebook,
+        name='guidebook_schedule'),
+
+    url(r'^guidebook/sponsors/', djangocon.views.guidebook_sponsor_export,
+        name='guidebook_sponsors'),
 
     url(r'^boxes/', include('symposion.boxes.urls')),
     url(r'^teams/', include('symposion.teams.urls')),
