@@ -12,6 +12,7 @@ from symposion.proposals.models import ProposalBase
 from symposion.reviews.models import ProposalResult
 from symposion.reviews.views import access_not_permitted
 from symposion.schedule.models import Slot
+from symposion.speakers.models import Speaker
 from symposion.sponsorship.models import Sponsor
 from unidecode import unidecode
 
@@ -219,6 +220,45 @@ def guidebook_sponsor_export(request):
                 Site.objects.get_current().domain,
                 sponsor.website_logo.url
             )
+        ])
+
+    return response
+
+
+@login_required
+def guidebook_speaker_export(request):
+    content_type = 'text/csv'
+    response = HttpResponse(content_type=content_type)
+    response['Content-Disposition'] = 'attachment; filename="guidebook_speakers.csv"'
+
+    writer = unicodecsv.writer(response, quoting=unicodecsv.QUOTE_ALL)
+    writer.writerow([
+        'Name',
+        'Sub-Title (i.e. Location, Table/Booth, or Title/Sponsorship Level)',
+        'Description (Optional)',
+        'Location/Room',
+        'Image (Optional)'
+    ])
+
+    speakers = Speaker.objects.filter(
+        presentations__isnull=False,
+        presentations__cancelled=False)
+    for speaker in speakers:
+
+        if hasattr(speaker.photo, 'url'):
+            photo_url = 'https://{0}{1}'.format(
+                Site.objects.get_current().domain,
+                speaker.photo.url
+            )
+        else:
+            photo_url = ''
+
+        writer.writerow([
+            speaker.name,
+            '',
+            unidecode(speaker.biography.rendered),
+            '',
+            photo_url,
         ])
 
     return response

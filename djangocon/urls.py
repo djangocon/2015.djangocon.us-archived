@@ -52,6 +52,9 @@ urlpatterns += patterns(
     url(r'^guidebook/schedule/$', djangocon.views.schedule_guidebook,
         name='guidebook_schedule'),
 
+    url(r'^guidebook/speakers/', djangocon.views.guidebook_speaker_export,
+        name='guidebook_speakers'),
+
     url(r'^guidebook/sponsors/', djangocon.views.guidebook_sponsor_export,
         name='guidebook_sponsors'),
 
