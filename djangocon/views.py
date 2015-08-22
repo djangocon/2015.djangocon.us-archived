@@ -195,18 +195,22 @@ def schedule_guidebook(request):
 
 @login_required
 def guidebook_sponsor_export(request):
-    headers = (
+    content_type = 'text/csv'
+    response = HttpResponse(content_type=content_type)
+    response['Content-Disposition'] = 'attachment; filename="guidebook_sponsors.csv"'
+
+    writer = unicodecsv.writer(response, quoting=unicodecsv.QUOTE_ALL)
+    writer.writerow([
         'Name',
         'Sub-Title (i.e. Location, Table/Booth, or Title/Sponsorship Level)',
         'Description (Optional)',
         'Location/Room',
         'Image (Optional)'
-    )
-    data = []
+    ])
 
     sponsors = Sponsor.objects.active()
     for sponsor in sponsors:
-        sponsor_data = [
+        writer.writerow([
             sponsor.name,
             sponsor.level.name,
             sponsor.listing_text,
@@ -215,15 +219,6 @@ def guidebook_sponsor_export(request):
                 Site.objects.get_current().domain,
                 sponsor.website_logo.url
             )
-        ]
-        data.append(sponsor_data)
-
-    data = tablib.Dataset(*data, headers=headers)
-
-    response = HttpResponse(
-        data.xls,
-        content_type='application/vnd.ms-excel'
-    )
-    response['Content-Disposition'] = 'attachment; filename="guidebook_sponsors.xls"'
+        ])
 
     return response
