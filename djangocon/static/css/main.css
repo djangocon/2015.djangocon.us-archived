@@ -443,7 +443,7 @@ a.anchor {
 .navbar-default .navbar-nav li a {
   color:#EE5A28;
   padding-top:14px;
-  padding-right: 24px;
+  padding-right: 16px;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
